@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e60064;
+  }
+}
+
+/* Pink Connector Line (Signature Boch & Fernsh Feature) */
+.pink-connector {
+  position: relative;
+}
+
+.pink-connector::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background-color: #e60064;
+  transform: translateY(-50%);
+}
+
+/* Signature Boch & Fernsh button */
+.btn-bf-outline {
+  border: 1px solid #111111;
+  background-color: #ffffff;
+  color: #111111;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-bf-outline:hover {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.btn-bf-dark {
+  background-color: #222222;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-bf-dark:hover {
+  background-color: #000000;
+}
