@@ -1,13 +1,30 @@
+@font-face {
+  font-family: "MetaCompPro-CondNormal W01 Rg";
+  src: url("/MetaCompPro-CondNormal.woff2") format("woff2"),
+       url("/MetaCompPro-CondNormal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
+  *, ::before, ::after {
+    font-family: "MetaCompPro-CondNormal W01 Rg", "Plus Jakarta Sans", Roboto, sans-serif;
+  }
+
+  html, body {
     background-color: #ffffff;
     color: #111111;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "MetaCompPro-CondNormal W01 Rg", "Plus Jakarta Sans", Roboto, sans-serif !important;
     -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, button, a, input, textarea, select {
+    font-family: "MetaCompPro-CondNormal W01 Rg", "Plus Jakarta Sans", Roboto, sans-serif;
   }
 
   /* Custom subtle scrollbar */

@@ -24,9 +24,9 @@ export default {
         }
       },
       fontFamily: {
-        body: ['"Plus Jakarta Sans"', 'Roboto', 'sans-serif'],
-        display: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'sans-serif'],
-        condensed: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"MetaCompPro-CondNormal W01 Rg"', '"Plus Jakarta Sans"', 'Roboto', 'sans-serif'],
+        display: ['"MetaCompPro-CondNormal W01 Rg"', '"Plus Jakarta Sans"', 'Roboto', 'sans-serif'],
+        condensed: ['"MetaCompPro-CondNormal W01 Rg"', '"Plus Jakarta Sans"', 'Roboto', 'sans-serif'],
       },
       animation: {
         'marquee': 'marquee 25s linear infinite',
