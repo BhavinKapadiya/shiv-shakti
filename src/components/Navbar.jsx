@@ -68,6 +68,12 @@ export default function Navbar({ onOpenMenu, onOpenBooking, onNavigate, setCurso
             Gallery
           </button>
           <button 
+            onClick={() => onNavigate('sponsorship')}
+            className="hover:text-[#e60064] text-[#e60064] font-bold transition-colors relative"
+          >
+            Sponsorship
+          </button>
+          <button 
             onClick={() => onNavigate('contact')}
             className="hover:text-[#e60064] transition-colors"
           >

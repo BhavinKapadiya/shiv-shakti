@@ -306,5 +306,6 @@ export const MENU_ITEMS = [
   { label: "Productions", href: "#productions", targetId: "productions", marquee: "SEASON ONE • SHIV-SHAKTI • ANDHA YUG • CHANDNI RAATEIN" },
   { label: "Artists", href: "#artists", targetId: "artists", marquee: "PARTH • MEHER IRANI • SOURAV DAS • PRIYA NAIR • THE COMPANY" },
   { label: "Gallery", href: "#gallery", targetId: "gallery", marquee: "FROM THE WINGS • STAGE LIGHTS • REHEARSALS • BACKSTAGE SECRETS" },
+  { label: "Sponsorship", href: "#sponsorship", targetId: "sponsorship", marquee: "PARTNERSHIPS • 100 SHOWS • 80,000+ AUDIENCE • BRAND INTEGRATIONS • PITCH DECK" },
   { label: "Contact", href: "#contact", targetId: "contact", marquee: "INVITE US TO YOUR CITY • VENUE BOOKINGS • COLLABORATIONS" }
 ];

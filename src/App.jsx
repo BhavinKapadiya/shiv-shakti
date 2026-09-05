@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import NavigationMenu from './components/NavigationMenu';
 import HeroSection from './components/HeroSection';
@@ -11,6 +11,7 @@ import GallerySection from './components/GallerySection';
 import ContactSection from './components/ContactSection';
 import ArchiveSection from './components/ArchiveSection';
 import FaqSection from './components/FaqSection';
+import SponsorshipPage from './components/SponsorshipPage';
 import Footer from './components/Footer';
 
 // Modals
@@ -23,6 +24,7 @@ import ShowInfoModal from './components/Modals/ShowInfoModal';
 import AboutModal from './components/Modals/AboutModal';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'sponsorship'
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cursorText, setCursorText] = useState('');
   
@@ -35,12 +37,52 @@ export default function App() {
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [selectedMoment, setSelectedMoment] = useState(null);
 
-  const scrollToSection = (targetId) => {
+  // Sync with URL hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash === '#sponsorship' || hash === '#sponsors' || hash === '#partnership') {
+        setCurrentPage('sponsorship');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (currentPage === 'sponsorship') {
+        setCurrentPage('home');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [currentPage]);
+
+  const handleNavigate = (targetId) => {
     setIsMenuOpen(false);
+
+    if (targetId === 'sponsorship') {
+      setCurrentPage('sponsorship');
+      window.location.hash = '#sponsorship';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (currentPage === 'sponsorship') {
+      setCurrentPage('home');
+      window.location.hash = targetId === 'hero' ? '' : `#${targetId}`;
+      setTimeout(() => {
+        if (targetId === 'hero') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const elem = document.getElementById(targetId);
+          if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return;
+    }
+
     if (targetId === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+
     const elem = document.getElementById(targetId);
     if (elem) {
       elem.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +96,7 @@ export default function App() {
       <Navbar
         onOpenMenu={() => setIsMenuOpen(true)}
         onOpenBooking={() => setIsBookingOpen(true)}
-        onNavigate={scrollToSection}
+        onNavigate={handleNavigate}
         setCursorText={setCursorText}
       />
 
@@ -62,92 +104,100 @@ export default function App() {
       <NavigationMenu
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
-        onNavigate={scrollToSection}
+        onNavigate={handleNavigate}
         onOpenBooking={() => setIsBookingOpen(true)}
         onOpenInvite={() => setIsInviteOpen(true)}
         setCursorText={setCursorText}
       />
 
-      {/* Main Page Flow */}
-      <main>
-        {/* 2. Hero Section (Matches Screenshot 1) */}
-        <HeroSection
-          onOpenVideo={() => setIsVideoOpen(true)}
-          onOpenBooking={() => setIsBookingOpen(true)}
-          onNavigate={scrollToSection}
+      {/* Conditional Page Rendering */}
+      {currentPage === 'sponsorship' ? (
+        <SponsorshipPage
+          onNavigateHome={() => handleNavigate('hero')}
           setCursorText={setCursorText}
         />
+      ) : (
+        /* Main Home Page Flow */
+        <main>
+          {/* 2. Hero Section (Matches Screenshot 1) */}
+          <HeroSection
+            onOpenVideo={() => setIsVideoOpen(true)}
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onNavigate={handleNavigate}
+            setCursorText={setCursorText}
+          />
 
-        {/* 3. Manifesto & Awards with Emoji Stickers (Matches Screenshot 2) */}
-        <ManifestoSection
-          setCursorText={setCursorText}
-        />
+          {/* 3. Manifesto & Awards with Emoji Stickers (Matches Screenshot 2) */}
+          <ManifestoSection
+            setCursorText={setCursorText}
+          />
 
-        {/* 4. "We make work that works" 2-Column Productions (Matches Screenshot 3) */}
-        <WorksSection
-          onOpenBooking={() => setIsBookingOpen(true)}
-          onOpenInvite={() => setIsInviteOpen(true)}
-          onOpenShowInfo={() => setIsShowInfoOpen(true)}
-          onOpenVideo={() => setIsVideoOpen(true)}
-          setCursorText={setCursorText}
-        />
+          {/* 4. "We make work that works" 2-Column Productions (Matches Screenshot 3) */}
+          <WorksSection
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onOpenInvite={() => setIsInviteOpen(true)}
+            onOpenShowInfo={() => setIsShowInfoOpen(true)}
+            onOpenVideo={() => setIsVideoOpen(true)}
+            setCursorText={setCursorText}
+          />
 
-        {/* 5. Dark Repertoire & Filter View (Matches Screenshot 5) */}
-        <ProductionsFilterSection
-          onOpenBooking={() => setIsBookingOpen(true)}
-          onOpenShowInfo={() => setIsShowInfoOpen(true)}
-          setCursorText={setCursorText}
-        />
+          {/* 5. Dark Repertoire & Filter View (Matches Screenshot 5) */}
+          <ProductionsFilterSection
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onOpenShowInfo={() => setIsShowInfoOpen(true)}
+            setCursorText={setCursorText}
+          />
 
-        {/* 6. Our Story & 3 Pillars */}
-        <OurStory
-          onOpenAboutModal={() => setIsAboutOpen(true)}
-          onOpenInvite={() => setIsInviteOpen(true)}
-          setCursorText={setCursorText}
-        />
+          {/* 6. Our Story & 3 Pillars */}
+          <OurStory
+            onOpenAboutModal={() => setIsAboutOpen(true)}
+            onOpenInvite={() => setIsInviteOpen(true)}
+            setCursorText={setCursorText}
+          />
 
-        {/* 7. The Company / Artists (Cast & Crew) */}
-        <ArtistsSection
-          onSelectArtist={(artist) => setSelectedArtist(artist)}
-          onOpenAllArtists={() => setIsAboutOpen(true)}
-          setCursorText={setCursorText}
-        />
+          {/* 7. The Company / Artists (Cast & Crew) */}
+          <ArtistsSection
+            onSelectArtist={(artist) => setSelectedArtist(artist)}
+            onOpenAllArtists={() => setIsAboutOpen(true)}
+            setCursorText={setCursorText}
+          />
 
-        {/* 8. Moments ("From the Wings" Gallery & Lightbox) */}
-        <GallerySection
-          onSelectMoment={(moment) => setSelectedMoment(moment)}
-          onOpenFullGallery={() => setSelectedMoment({
-            id: 'moment-all',
-            title: 'Stage & Rehearsal Moments',
-            category: 'Stage Light',
-            caption: 'The solitary amber cone before actors take their marks.',
-            image: 'https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1200&q=80'
-          })}
-          setCursorText={setCursorText}
-        />
+          {/* 8. Moments ("From the Wings" Gallery & Lightbox) */}
+          <GallerySection
+            onSelectMoment={(moment) => setSelectedMoment(moment)}
+            onOpenFullGallery={() => setSelectedMoment({
+              id: 'moment-all',
+              title: 'Stage & Rehearsal Moments',
+              category: 'Stage Light',
+              caption: 'The solitary amber cone before actors take their marks.',
+              image: '/assets/shiv-damru-panel.png'
+            })}
+            setCursorText={setCursorText}
+          />
 
-        {/* 9. 3-Column Pop-Art Cards (Matches Screenshot 4) */}
-        <ContactSection
-          onOpenBooking={() => setIsBookingOpen(true)}
-          onOpenInvite={() => setIsInviteOpen(true)}
-          setCursorText={setCursorText}
-        />
+          {/* 9. 3-Column Pop-Art Cards (Matches Screenshot 4) */}
+          <ContactSection
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onOpenInvite={() => setIsInviteOpen(true)}
+            setCursorText={setCursorText}
+          />
 
-        {/* 10. From The Archive (YouTube Channel Embed) */}
-        <ArchiveSection
-          setCursorText={setCursorText}
-        />
+          {/* 10. From The Archive (YouTube Channel Embed) */}
+          <ArchiveSection
+            setCursorText={setCursorText}
+          />
 
-        {/* 11. FAQ Section */}
-        <FaqSection
-          onOpenInvite={() => setIsInviteOpen(true)}
-          setCursorText={setCursorText}
-        />
-      </main>
+          {/* 11. FAQ Section */}
+          <FaqSection
+            onOpenInvite={() => setIsInviteOpen(true)}
+            setCursorText={setCursorText}
+          />
+        </main>
+      )}
 
       {/* 12. Editorial Footer */}
       <Footer
-        onNavigate={scrollToSection}
+        onNavigate={handleNavigate}
         onOpenInvite={() => setIsInviteOpen(true)}
         onOpenBooking={() => setIsBookingOpen(true)}
         setCursorText={setCursorText}
