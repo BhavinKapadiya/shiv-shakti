@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Sparkles, ArrowRight, Ticket } from 'lucide-react';
+import { Play, Sparkles, ArrowRight, Ticket, Flame } from 'lucide-react';
 import { THEATRE_INFO, NOW_SHOWING } from '../data/theatreData';
 
 export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, setCursorText }) {
@@ -68,54 +68,55 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
 
           </div>
 
-          {/* Right Column: Retro Pop-Art Collage Art piece with transparent Shiv-Shakti Cutout */}
+          {/* Right Column: Provided When Shiv Met Shakti Official Image */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             
-            <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center select-none">
+            <div className="relative w-full max-w-[440px] flex items-center justify-center select-none">
               
+              {/* Ambient Glows */}
+              <div className="absolute -top-6 -left-6 w-56 h-56 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-6 -right-6 w-56 h-56 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#e60064]/10 rounded-full blur-3xl pointer-events-none" />
+
               {/* Hand-drawn blue sketch lines top left */}
-              <svg className="absolute top-2 left-6 w-16 h-16 text-blue-600 -rotate-12 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
+              <svg className="absolute -top-4 -left-4 w-16 h-16 text-blue-600 -rotate-12 pointer-events-none z-20" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
                 <path d="M10 20 Q 30 5, 60 15 T 90 25" />
                 <path d="M15 35 Q 35 20, 65 30 T 95 40" />
                 <path d="M20 50 Q 40 35, 70 45" />
               </svg>
 
-              {/* Big Vibrant Hot-Pink Circle */}
-              <div className="w-[300px] sm:w-[380px] h-[300px] sm:h-[380px] rounded-full bg-[#e60064] relative overflow-hidden flex items-center justify-center shadow-2xl">
-                {/* Yellow Marigold Flower Accent top right */}
-                <div className="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#fbbf24] border-4 border-white flex items-center justify-center shadow-lg transform rotate-12 z-20">
-                  <div className="w-8 h-8 rounded-full bg-[#ea580c]" />
-                </div>
+              {/* Blue Cross doodle top right */}
+              <div className="absolute -top-4 -right-2 text-blue-600 font-black text-3xl z-20 pointer-events-none">
+                ✕
               </div>
 
-              {/* Shiv & Shakti Divine Duo (No Background Transparent Cutout from Kromme villa grid) */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <div className="relative w-[340px] sm:w-[440px] h-auto flex items-center justify-center">
-                  <img
-                    src="/assets/shiv-shakti-hero-portrait.png"
-                    alt="Shiv-Shakti Play by Areeso Theatre"
-                    className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)] scale-105 sm:scale-110 transform transition-transform duration-500"
-                  />
-                </div>
+              {/* Main Poster Container with Provided Artwork */}
+              <div className="relative w-full aspect-[2/3] max-w-[420px] rounded-3xl overflow-hidden bg-black shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] border border-gray-900 group">
+                <img
+                  src="/assets/when-shiv-met-shakti-full-poster.png"
+                  alt="When Shiv Met Shakti — Areeso Theatre"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+
+                {/* Subtle Inner Border Glow */}
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/15 pointer-events-none" />
               </div>
 
-              {/* Clutch-style Rating Polygon Badge (from Screenshot 1) */}
-              <div className="absolute top-1/3 left-0 sm:-left-4 z-30 bg-white border-2 border-gray-900 px-4 py-3 rounded-lg shadow-xl transform -rotate-6">
+              {/* Floating Rating Polygon Badge (Screenshot 1 Style) */}
+              <div className="absolute -bottom-4 -left-4 sm:-left-6 z-30 bg-white border-2 border-gray-900 px-4 py-3 rounded-xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform">
                 <p className="text-[9px] font-mono uppercase tracking-widest text-[#777777] font-bold">Top Debut Production</p>
                 <p className="font-display font-black text-base text-[#111111] uppercase tracking-tight">Shiv-Shakti</p>
                 <p className="text-[10px] font-mono text-[#e60064] font-bold">Mumbai • 2026</p>
               </div>
 
-              {/* Blue Cross / Plus doodle top right */}
-              <div className="absolute top-4 right-2 text-blue-600 font-black text-3xl z-20 pointer-events-none">
-                ✕
+              {/* Live Premiere Pill top right */}
+              <div className="absolute top-4 right-4 z-20 bg-black/80 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white">Debut Production</span>
               </div>
 
-              {/* Blue solid dot bottom left */}
-              <div className="absolute bottom-6 left-12 w-9 h-9 rounded-full bg-blue-600 shadow-lg z-20" />
-
               {/* 3D sphere accent bottom right */}
-              <div className="absolute bottom-8 right-8 w-14 h-14 rounded-full bg-gradient-to-tr from-gray-300 via-white to-gray-100 border border-gray-300 shadow-2xl z-20" />
+              <div className="absolute -bottom-5 -right-5 w-14 h-14 rounded-full bg-gradient-to-tr from-gray-300 via-white to-gray-100 border border-gray-300 shadow-2xl z-20" />
 
             </div>
 
