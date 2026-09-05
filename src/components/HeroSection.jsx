@@ -68,10 +68,10 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
 
           </div>
 
-          {/* Right Column: Retro Pop-Art Collage Art piece matching Screenshot 1 */}
+          {/* Right Column: Retro Pop-Art Collage Art piece with transparent Shiv-Shakti Cutout */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             
-            <div className="relative w-full max-w-[480px] aspect-square flex items-center justify-center select-none">
+            <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center select-none">
               
               {/* Hand-drawn blue sketch lines top left */}
               <svg className="absolute top-2 left-6 w-16 h-16 text-blue-600 -rotate-12 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4">
@@ -88,21 +88,14 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
                 </div>
               </div>
 
-              {/* Vintage Actor Cutout Portrait placed over the pink circle */}
+              {/* Shiv & Shakti Divine Duo (No Background Transparent Cutout from Kromme villa grid) */}
               <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <div className="relative w-[320px] sm:w-[390px] h-[360px] sm:h-[440px] flex items-end justify-center">
+                <div className="relative w-[340px] sm:w-[440px] h-auto flex items-center justify-center">
                   <img
-                    src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80"
-                    alt="Areeso Theatre Stage Art"
-                    className="w-full h-full object-contain grayscale contrast-125 drop-shadow-2xl"
+                    src="/assets/shiv-shakti-hero-portrait.png"
+                    alt="Shiv-Shakti Play by Areeso Theatre"
+                    className="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)] scale-105 sm:scale-110 transform transition-transform duration-500"
                   />
-
-                  {/* Pop-Art Blue Painted Mustache Doodle */}
-                  <div className="absolute top-[52%] left-1/2 -translate-x-1/2 z-30">
-                    <svg className="w-24 h-10 text-blue-600 drop-shadow-md" viewBox="0 0 100 40" fill="currentColor">
-                      <path d="M50 25 C30 10 10 15 0 25 C15 35 35 30 50 25 C65 30 85 35 100 25 C90 15 70 10 50 25 Z" />
-                    </svg>
-                  </div>
                 </div>
               </div>
 

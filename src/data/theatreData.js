@@ -79,8 +79,8 @@ export const NOW_SHOWING = {
   longDescription: "An electrifying exploration of balance, cosmic tension, and grounded human emotion. Blending raw physical theatre, intense Indian folk percussion, and bold contemporary dramaturgy, Shiv-Shakti questions where divine archetypes live inside modern conflicts.",
   curtainCallQuote: "When the cosmic dance enters a Mumbai tenement, silence becomes the loudest song.",
   tags: ["Hindi", "Shiv-Shakti", "Our debut production", "Drama"],
-  posterImage: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80",
-  stageHoverImage: "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?auto=format&fit=crop&w=1200&q=80",
+  posterImage: "/assets/shiv-shakti-center-panel.png",
+  stageHoverImage: "/assets/shiv-damru-panel.png",
   director: "Parth",
   castHighlights: "Meher Irani, Ensemble of 12 Actors & Live Musicians",
   venueDetails: "Premiering across iconic auditoriums in South Mumbai & Bandra/Juhu."
@@ -97,8 +97,8 @@ export const PRODUCTIONS = [
     tags: ["Hindi Drama", "Live Percussion", "Mumbai Premiere", "Physical Theatre"],
     quote: "Where ancient cosmology collides with raw street-level humanity.",
     status: "Premiering Soon",
-    poster: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1000&q=80",
-    hoverPoster: "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?auto=format&fit=crop&w=1000&q=80",
+    poster: "/assets/shiv-shakti-center-panel.png",
+    hoverPoster: "/assets/shiv-damru-panel.png",
     description: "Areeso Theatre's inaugural flagship production. Staged with high-energy physical choreography, original score, and immersive lighting design.",
     city: "Mumbai",
     featured: true
@@ -203,20 +203,20 @@ export const ARTISTS = [
 export const MOMENTS_GALLERY = [
   {
     id: "moment-1",
-    title: "Sample Stage Light",
+    title: "The Rhythm of Divinity Begins",
     subtitle: "From the Wings",
     category: "Stage Light",
-    caption: "The solitary amber cone before actors take their marks.",
-    image: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1200&q=80",
+    caption: "The solitary amber cone and divine Damru resonance before actors take their marks.",
+    image: "/assets/shiv-damru-panel.png",
     span: "col-span-12 md:col-span-8"
   },
   {
     id: "moment-2",
-    title: "The Green Room Mirror",
-    subtitle: "Pre-Show Focus",
+    title: "Cosmic Union & Dance",
+    subtitle: "Sacred Movement",
     category: "Backstage",
-    caption: "Makeup, scripts, and the five silent minutes before call time.",
-    image: "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80",
+    caption: "They were never just two. They were one — cosmic choreography in celestial light.",
+    image: "/assets/shiv-shakti-dance.png",
     span: "col-span-12 md:col-span-4"
   },
   {
