@@ -75,7 +75,7 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
               
               {/* Independent Artwork Image */}
               <img
-                src="/assets/when-shiv-met-shakti-independent.png"
+                src="/assets/Final.png"
                 alt="When Shiv Met Shakti — Areeso Theatre"
                 className="w-full max-w-[460px] sm:max-w-[500px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.12)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
               />
