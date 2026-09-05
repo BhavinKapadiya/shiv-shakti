@@ -1,23 +1,22 @@
 import React from 'react';
-import { Play, Sparkles, ArrowRight, Ticket } from 'lucide-react';
 import { THEATRE_INFO, NOW_SHOWING } from '../data/theatreData';
 
 export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, setCursorText }) {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center pt-28 pb-16 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
+    <section id="hero" className="relative pt-24 sm:pt-28 pb-12 sm:pb-16 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
       
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Bold Typography & Actions matching Screenshot 1 */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             
-            <h1 className="font-display font-black text-4xl sm:text-6xl md:text-6xl lg:text-[64px] tracking-tight leading-[1.08] text-[#111111]">
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[58px] xl:text-[64px] tracking-tight leading-[1.06] text-[#111111]">
               where every seat <br />
               holds its breath.
             </h1>
 
-            <div className="space-y-4 text-base sm:text-lg text-[#444444] font-normal leading-relaxed max-w-xl">
+            <div className="space-y-3 sm:space-y-4 text-base sm:text-[17px] text-[#444444] font-normal leading-relaxed max-w-xl">
               <p>
                 Hello! We are Areeso Theatre, an independent Indian theatre company crafting original plays and bold revivals — stories rooted in our soil, staged for the world.
               </p>
@@ -68,16 +67,16 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
 
           </div>
 
-          {/* Right Column: Independent When Shiv Met Shakti Artwork (No Box / No Clutter) */}
-          <div className="lg:col-span-6 relative flex justify-center items-center">
+          {/* Right Column: Independent When Shiv Met Shakti Artwork (Slightly smaller, balanced proportion) */}
+          <div className="lg:col-span-6 relative flex justify-center items-center lg:justify-end">
             
-            <div className="relative w-full max-w-[500px] flex items-center justify-center select-none">
+            <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] flex items-center justify-center select-none">
               
               {/* Independent Artwork Image */}
               <img
                 src="/assets/Final.png"
                 alt="When Shiv Met Shakti — Areeso Theatre"
-                className="w-full max-w-[460px] sm:max-w-[500px] h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.12)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
+                className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
               />
 
             </div>
