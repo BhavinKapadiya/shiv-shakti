@@ -1,22 +1,35 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 import { THEATRE_INFO, NOW_SHOWING } from '../data/theatreData';
 
 export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, setCursorText }) {
   return (
-    <section id="hero" className="relative pt-24 sm:pt-28 pb-12 sm:pb-16 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
+    <section id="hero" className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
       
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Bold Typography & Actions matching Screenshot 1 */}
-          <div className="lg:col-span-6 space-y-5 sm:space-y-6">
+          {/* Left Column: Bold Typography & Actions */}
+          <div className="lg:col-span-6 space-y-6">
             
-            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[58px] xl:text-[64px] tracking-tight leading-[1.06] text-[#111111]">
+            {/* Status Pill Tag */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gray-50 border border-gray-200 shadow-sm text-xs font-mono text-[#555555]">
+              <span className="w-2 h-2 rounded-full bg-[#e60064] animate-ping" />
+              <span className="uppercase tracking-wider font-semibold text-[#111111]">
+                Season One • Mumbai Stage
+              </span>
+              <span>•</span>
+              <span className="text-[#e60064] font-semibold">Tickets on sale soon</span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-[54px] xl:text-[62px] tracking-tight leading-[1.05] text-[#111111]">
               where every seat <br />
               holds its breath.
             </h1>
 
-            <div className="space-y-3 sm:space-y-4 text-base sm:text-[17px] text-[#444444] font-normal leading-relaxed max-w-xl">
+            {/* Body Copy */}
+            <div className="space-y-3 text-base sm:text-[17px] text-[#444444] font-normal leading-relaxed max-w-xl">
               <p>
                 Hello! We are Areeso Theatre, an independent Indian theatre company crafting original plays and bold revivals — stories rooted in our soil, staged for the world.
               </p>
@@ -25,8 +38,8 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
               </p>
             </div>
 
-            {/* Buttons matching Screenshot 1 (Play Reel + Solid Dark Button with Pink Line) */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-5">
               
               {/* STAGE REEL Button */}
               <button
@@ -39,44 +52,34 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
                 <span>Stage Reel</span>
               </button>
 
-              {/* KNOW MORE / BOOK TICKETS Button with Pink Extension Line */}
-              <div className="relative inline-flex items-center">
-                <button
-                  onClick={onOpenBooking}
-                  className="px-8 py-3.5 rounded-lg bg-[#222222] hover:bg-black text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-md"
-                  onMouseEnter={() => setCursorText && setCursorText('BOOK')}
-                  onMouseLeave={() => setCursorText && setCursorText('')}
-                >
-                  Book Tickets
-                </button>
-                {/* Signature Pink Line Marker (Screenshot 1) */}
-                <div className="w-8 h-[3px] bg-[#e60064] ml-2 hidden sm:block" />
-              </div>
+              {/* BOOK TICKETS Button */}
+              <button
+                onClick={onOpenBooking}
+                className="px-8 py-3.5 rounded-lg bg-[#111111] hover:bg-[#e60064] text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-md flex items-center gap-2 group"
+                onMouseEnter={() => setCursorText && setCursorText('BOOK')}
+                onMouseLeave={() => setCursorText && setCursorText('')}
+              >
+                <span>Book Tickets</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
 
-            </div>
-
-            {/* Status Pill */}
-            <div className="pt-2 flex items-center gap-3 text-xs font-mono text-[#777777]">
-              <span className="w-2 h-2 rounded-full bg-[#e60064] animate-ping" />
-              <span className="uppercase tracking-wider font-semibold text-[#111111]">
-                Season One • Mumbai Stage
-              </span>
-              <span>•</span>
-              <span className="text-[#e60064] font-semibold">Tickets on sale soon</span>
             </div>
 
           </div>
 
-          {/* Right Column: Independent When Shiv Met Shakti Artwork (Slightly smaller, balanced proportion) */}
-          <div className="lg:col-span-6 relative flex justify-center items-center lg:justify-end">
+          {/* Right Column: Independent Artwork with Ambient Contrast Aura */}
+          <div className="lg:col-span-6 relative flex justify-center items-center">
             
-            <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] flex items-center justify-center select-none">
+            <div className="relative flex items-center justify-center select-none">
               
-              {/* Independent Artwork Image */}
+              {/* Soft Ambient Contrast Aura (Enhances white lettering contrast without creating a box) */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-amber-500/15 rounded-full blur-3xl scale-125 -z-10 pointer-events-none" />
+
+              {/* Independent Artwork Image with Height Capping */}
               <img
                 src="/assets/Final.png"
                 alt="When Shiv Met Shakti — Areeso Theatre"
-                className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
+                className="w-auto max-h-[430px] sm:max-h-[470px] lg:max-h-[500px] max-w-[300px] sm:max-w-[340px] lg:max-w-[370px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.14)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
               />
 
             </div>
