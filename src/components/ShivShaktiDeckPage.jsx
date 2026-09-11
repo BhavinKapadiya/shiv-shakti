@@ -125,6 +125,9 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
               <p className="font-display text-2xl sm:text-3xl text-gray-300 font-semibold tracking-wide">
                 A Divine Love Story
               </p>
+              <p className="text-xs sm:text-sm font-mono text-[#e60064] font-bold tracking-wider pt-1">
+                Directed by Nandini • Produced by Areeso Theatre
+              </p>
             </div>
 
             <p className="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl">
@@ -176,7 +179,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
             </div>
           </div>
 
-          {/* Right Image / Banner Showcase */}
+          {/* Right Image / Banner Showcase (Clean without text overlays) */}
           <div className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-black shadow-2xl group">
               <img
@@ -184,19 +187,6 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
                 alt="Shiv-Shakti Production Banner"
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              
-              <div className="absolute bottom-6 left-6 right-6 space-y-2">
-                <span className="px-2.5 py-1 rounded-md bg-[#e60064] text-white text-[10px] font-mono font-bold uppercase">
-                  Production Key Art
-                </span>
-                <h3 className="font-display font-bold text-lg text-white">
-                  When Shiv Met Shakti
-                </h3>
-                <p className="text-xs font-mono text-gray-300">
-                  Directed by Nandini • Produced by Areeso Theatre
-                </p>
-              </div>
             </div>
           </div>
 

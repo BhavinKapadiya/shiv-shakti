@@ -111,24 +111,23 @@ export default function ProductionsFilterSection({ onOpenBooking, onOpenShowInfo
 
       <div className="max-w-7xl mx-auto space-y-12 sm:space-y-14 relative z-10">
         
-        {/* Centered Headline matching Option 1 */}
+        {/* Centered Headline for Our Work & Past Productions Archive */}
         <div className="text-center space-y-4 max-w-4xl mx-auto">
           
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold uppercase tracking-widest text-[#e60064]">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Past Productions • Archive & Repertoire</span>
+            <span>Section 03 • Our Work & Past Productions Repertoire</span>
           </div>
 
           {/* Main Headline */}
-          <h2 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-white lowercase leading-[1.08]">
-            stages we’ve ignited. <br />
-            stories that stayed.
+          <h2 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
+            OUR WORK <span className="text-[#e60064]">&</span> PAST REPERTOIRE
           </h2>
 
           {/* Sub-headline */}
-          <p className="text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed max-w-3xl mx-auto">
-            From housefull opening nights in Mumbai to packed auditoriums across Gujarat and Delhi — explore the past productions, tours, and standing ovations that built our stage.
+          <p className="text-sm sm:text-base md:text-lg text-white/70 font-normal leading-relaxed max-w-3xl mx-auto">
+            A comprehensive archive of Areeso Theatre’s past productions, sold-out multi-city tours, and festival premieres across India.
           </p>
 
         </div>

@@ -255,12 +255,8 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
                   {item.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-white/80 font-normal leading-relaxed line-clamp-2 max-w-3xl pt-1">
-                  {item.caption}
-                </p>
-
                 {/* Subtle Click Indicator */}
-                <div className="pt-2 flex items-center gap-2 text-xs font-mono text-white/60 group-hover:text-white transition-colors">
+                <div className="pt-1 flex items-center gap-2 text-xs font-mono text-white/60 group-hover:text-white transition-colors">
                   <Eye className="w-3.5 h-3.5 text-[#e60064]" />
                   <span>Click to expand high-resolution</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#e60064] group-hover:translate-x-1.5 transition-transform" />

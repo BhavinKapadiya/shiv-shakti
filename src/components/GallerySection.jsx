@@ -119,10 +119,6 @@ export default function GallerySection({ onSelectMoment, onOpenFullGallery, onNa
                 <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-tight group-hover:text-pink-100 transition-colors">
                   {moment.title}
                 </h3>
-                
-                <p className="text-xs text-white/80 font-normal line-clamp-1">
-                  {moment.caption}
-                </p>
               </div>
             </div>
           ))}

@@ -63,64 +63,40 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
       
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10">
         
-        {/* Section Header */}
+        {/* Section Header - Explicitly styled as Upcoming Shows & Live Tour Schedule */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-gray-200 pb-4 sm:pb-5">
           <div className="space-y-2 max-w-2xl">
             
             {/* Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 border border-pink-200 text-xs font-mono font-bold text-[#e60064] uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#e60064] animate-ping" />
-              <span>Section 02 • Next Performance</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <span>Section 02 • Upcoming Live Shows & Tour Schedule</span>
             </div>
 
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.1] text-[#111111]">
-              where the curtain rises next.
+              upcoming shows & tour dates.
             </h2>
           </div>
 
           <p className="text-sm sm:text-base text-[#555555] max-w-md font-normal leading-relaxed">
-            Highlighting our headline debut production and the upcoming season repertoire touring across India’s finest stages.
+            Live tickets and upcoming multi-city performance dates for our headline production and touring repertoire.
           </p>
         </div>
 
-        {/* 1. Main Featured Production Highlight: SHIV-SHAKTI (with Kromme villa grid banner) */}
+        {/* 1. Main Featured Production Highlight: SHIV-SHAKTI */}
         <div className="relative rounded-3xl bg-[#0d0d11] text-white overflow-hidden shadow-2xl border border-gray-800 transition-all duration-300 group">
           
           {/* Subtle Ambient Background Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#e60064]/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
 
-          {/* Panoramic Widescreen Banner Container */}
+          {/* Panoramic Widescreen Banner Container (Pristine without text overlays) */}
           <div className="relative w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[2.4/1] max-h-[380px] sm:max-h-[420px] bg-black overflow-hidden border-b border-gray-800">
             <img
               src="/assets/shiv-shakti-banner.jpg"
               alt="When Shiv Met Shakti Banner — The Rhythm of Divinity Begins"
               className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             />
-            
-            {/* Gradient Overlay & Badges on Banner */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d11] via-transparent to-black/30 pointer-events-none" />
-
-            {/* Top floating badges over banner */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap items-center gap-2 z-10">
-              <span className="px-3.5 py-1.5 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-lg flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" />
-                Headline Premiere
-              </span>
-              <span className="px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md text-white/90 border border-white/20 text-xs font-mono font-medium uppercase">
-                Season One Flagship
-              </span>
-              <span className="hidden sm:inline-flex px-3 py-1.5 rounded-full bg-amber-400/20 backdrop-blur-md text-amber-300 border border-amber-400/40 text-xs font-mono font-medium uppercase">
-                100 Shows Pan-India
-              </span>
-            </div>
-
-            {/* Bottom Right Director Stamp on Banner */}
-            <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-10">
-              <span className="px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-white/80 text-[11px] font-mono uppercase tracking-wider">
-                Directed by <strong className="text-white font-semibold">Parth</strong>
-              </span>
-            </div>
           </div>
 
           {/* Details & Action Bar below the Banner */}
@@ -128,8 +104,23 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
               
-              {/* Left Column: Title, Subtitle & Description */}
+              {/* Left Column: Badges on TOP of Shiv-Shakti heading */}
               <div className="lg:col-span-7 space-y-3">
+                
+                {/* 1. Badges moved directly on top of Shiv-Shakti heading */}
+                <div className="flex flex-wrap items-center gap-2 pb-1">
+                  <span className="px-3.5 py-1.5 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-md flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Headline Premiere
+                  </span>
+                  <span className="px-3.5 py-1.5 rounded-full bg-white/10 text-white/90 border border-white/15 text-xs font-mono font-medium uppercase">
+                    Season One Flagship
+                  </span>
+                  <span className="px-3.5 py-1.5 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-xs font-mono font-medium uppercase">
+                    100 Shows Pan-India
+                  </span>
+                </div>
+
                 <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-none">
                   Shiv-Shakti
                 </h3>
