@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import NavigationMenu from './components/NavigationMenu';
 import HeroSection from './components/HeroSection';
 import NextPerformanceSection from './components/NextPerformanceSection';
-import WorksSection from './components/WorksSection';
 import ProductionsFilterSection from './components/ProductionsFilterSection';
 import OurStory from './components/OurStory';
 import ArtistsSection from './components/ArtistsSection';
@@ -136,16 +135,7 @@ export default function App() {
             setCursorText={setCursorText}
           />
 
-          {/* 4. "We make work that works" 2-Column Productions (Matches Screenshot 3) */}
-          <WorksSection
-            onOpenBooking={() => setIsBookingOpen(true)}
-            onOpenInvite={() => setIsInviteOpen(true)}
-            onOpenShowInfo={() => setIsShowInfoOpen(true)}
-            onOpenVideo={() => setIsVideoOpen(true)}
-            setCursorText={setCursorText}
-          />
-
-          {/* 5. Dark Repertoire & Filter View (Matches Screenshot 5) */}
+          {/* 4. Dark Repertoire & Filter View (Matches Screenshot 5) */}
           <ProductionsFilterSection
             onOpenBooking={() => setIsBookingOpen(true)}
             onOpenShowInfo={() => setIsShowInfoOpen(true)}

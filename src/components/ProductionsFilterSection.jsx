@@ -26,7 +26,7 @@ export default function ProductionsFilterSection({ onOpenBooking, onOpenShowInfo
       );
 
   return (
-    <section id="shows" className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 bg-[#08080a] text-white">
+    <section id="productions" className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 bg-[#08080a] text-white">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Centered Headline matching Screenshot 5 */}
