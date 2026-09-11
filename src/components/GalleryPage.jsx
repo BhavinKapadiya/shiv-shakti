@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, ArrowRight, Camera, X, Maximize2, Download, 
   MapPin, Calendar, Sparkles, ChevronLeft, ChevronRight, Eye,
-  Drama, Layers, Info
+  Drama, Layers, Info, Grid, LayoutGrid
 } from 'lucide-react';
 import { MOMENTS_GALLERY, THEATRE_INFO } from '../data/theatreData';
 
 export default function GalleryPage({ onNavigateHome, setCursorText }) {
   const [selectedFilter, setSelectedFilter] = useState('All');
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'masonry'
+  const [viewMode, setViewMode] = useState('bento'); // 'bento' | 'cinematic'
 
   const categories = [
     'All',
@@ -49,11 +49,39 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
 
   const currentLightboxItem = activeLightboxIndex !== null ? filteredItems[activeLightboxIndex] : null;
 
+  // Custom Bento Grid layout classes
+  const getBentoSpan = (index, total) => {
+    if (viewMode === 'cinematic') {
+      return 'col-span-12 lg:col-span-6 min-h-[420px] sm:min-h-[500px]';
+    }
+    // Dynamic Bento Mosaic spans
+    switch (index % 8) {
+      case 0:
+        return 'col-span-12 lg:col-span-8 min-h-[380px] sm:min-h-[480px]';
+      case 1:
+        return 'col-span-12 sm:col-span-6 lg:col-span-4 min-h-[380px] sm:min-h-[480px]';
+      case 2:
+        return 'col-span-12 sm:col-span-6 lg:col-span-4 min-h-[380px] sm:min-h-[480px]';
+      case 3:
+        return 'col-span-12 sm:col-span-6 lg:col-span-4 min-h-[380px] sm:min-h-[480px]';
+      case 4:
+        return 'col-span-12 sm:col-span-6 lg:col-span-4 min-h-[380px] sm:min-h-[480px]';
+      case 5:
+        return 'col-span-12 lg:col-span-6 min-h-[380px] sm:min-h-[460px]';
+      case 6:
+        return 'col-span-12 lg:col-span-6 min-h-[380px] sm:min-h-[460px]';
+      case 7:
+        return 'col-span-12 min-h-[350px] sm:min-h-[480px]';
+      default:
+        return 'col-span-12 sm:col-span-6 min-h-[380px] sm:min-h-[460px]';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-[#111111] pt-24 pb-20 selection:bg-[#e60064] selection:text-white">
       
       {/* Top Breadcrumb & Return Bar */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4 flex items-center justify-between border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-3 flex items-center justify-between border-b border-gray-100">
         <button
           onClick={onNavigateHome}
           className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-[#111111] hover:text-[#e60064] transition-colors group"
@@ -71,7 +99,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
       </div>
 
       {/* Hero Header */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 pt-10 sm:pt-14 pb-8 space-y-6">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 pt-8 sm:pt-12 pb-6 space-y-5">
         
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 border border-pink-200 text-xs font-mono font-bold text-[#e60064] uppercase tracking-wider">
@@ -115,7 +143,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
       </section>
 
       {/* Filter & View Mode Controls Bar */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-4 sticky top-16 z-40 bg-white/95 backdrop-blur-md border-y border-gray-200">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-3 sticky top-16 z-40 bg-white/95 backdrop-blur-md border-y border-gray-200">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           
           {/* Categories */}
@@ -135,84 +163,109 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
             ))}
           </div>
 
-          <div className="text-xs font-mono text-gray-500 flex items-center gap-2">
-            <span>Showing {filteredItems.length} Photographs</span>
+          {/* View Mode Toggle */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono text-gray-400 mr-1 hidden sm:inline">View:</span>
+            <div className="flex items-center p-1 rounded-xl bg-gray-100 border border-gray-200">
+              <button
+                onClick={() => setViewMode('bento')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase transition-all ${
+                  viewMode === 'bento'
+                    ? 'bg-white text-[#111111] shadow-sm'
+                    : 'text-gray-500 hover:text-[#111111]'
+                }`}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Bento Mosaic</span>
+              </button>
+
+              <button
+                onClick={() => setViewMode('cinematic')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase transition-all ${
+                  viewMode === 'cinematic'
+                    ? 'bg-white text-[#111111] shadow-sm'
+                    : 'text-gray-500 hover:text-[#111111]'
+                }`}
+              >
+                <Grid className="w-3.5 h-3.5" />
+                <span>Large View</span>
+              </button>
+            </div>
           </div>
 
         </div>
       </section>
 
-      {/* Gallery Grid Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-10">
+      {/* Option 1: Immersive Full-Bleed Bento Mosaic Grid */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-8 sm:py-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-12 gap-5 sm:gap-6">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               onClick={() => setActiveLightboxIndex(index)}
-              className="group flex flex-col justify-between rounded-3xl bg-gray-50 hover:bg-white border border-gray-200 hover:border-gray-900/40 p-4 sm:p-5 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 cursor-pointer"
+              className={`${getBentoSpan(index, filteredItems.length)} group relative rounded-3xl overflow-hidden bg-gray-950 border border-gray-800/80 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 select-none`}
+              onMouseEnter={() => setCursorText && setCursorText('EXPAND')}
+              onMouseLeave={() => setCursorText && setCursorText('')}
             >
-              <div className="space-y-4">
-                
-                {/* Image Container */}
-                <div className="relative rounded-2xl overflow-hidden aspect-[16/11] bg-gray-900">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
+              {/* Full-Bleed Photograph */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
 
-                  {/* Category Badge */}
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#111111] text-[10px] font-mono font-bold uppercase tracking-wider shadow-sm">
-                      {item.category}
-                    </span>
-                  </div>
+              {/* Multi-Stop Cinematic Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20 opacity-80 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
 
-                  {/* Zoom Overlay Button */}
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <Maximize2 className="w-3.5 h-3.5" />
-                  </div>
-
-                  {/* Bottom Image Stamp */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-white/80">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-[#e60064]" />
-                      {item.location || 'Mumbai Rehearsal Room'}
-                    </span>
-                    {item.date && (
-                      <span className="bg-black/60 px-2 py-0.5 rounded text-white/70">
-                        {item.date}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content Info */}
-                <div className="space-y-1.5 px-1">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#e60064] font-bold block">
-                    {item.subtitle}
+              {/* Top Bar: Floating Badges & Zoom Trigger */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#111111] text-[10px] font-mono font-bold uppercase tracking-wider shadow-lg">
+                    {item.category}
                   </span>
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-[#111111] uppercase tracking-tight group-hover:text-[#e60064] transition-colors leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-[#666666] leading-relaxed pt-1">
-                    {item.caption}
-                  </p>
+                  {item.location && (
+                    <span className="hidden sm:inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white/90 text-[10px] font-mono border border-white/20">
+                      <MapPin className="w-3 h-3 text-[#e60064]" />
+                      <span>{item.location}</span>
+                    </span>
+                  )}
                 </div>
 
+                <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-white/40 flex items-center justify-center text-[#111111] group-hover:bg-[#e60064] group-hover:text-white transition-all duration-300 shadow-lg shrink-0">
+                  <Maximize2 className="w-4 h-4" />
+                </div>
               </div>
 
-              {/* Bottom Card Action */}
-              <div className="pt-4 mt-3 border-t border-gray-200 flex items-center justify-between text-xs font-mono text-gray-500 group-hover:text-[#111111] px-1">
-                <span className="flex items-center gap-1">
+              {/* Bottom Bar: Title, Subtitle, & Story Backdrop */}
+              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 space-y-2 z-10">
+                
+                <div className="flex items-center gap-2.5">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#fbbf24] font-bold">
+                    {item.subtitle}
+                  </span>
+                  {item.date && (
+                    <span className="text-[11px] font-mono text-white/60">
+                      • {item.date}
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white uppercase tracking-tight leading-[1.05] group-hover:text-pink-100 transition-colors">
+                  {item.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm text-white/80 font-normal leading-relaxed line-clamp-2 max-w-3xl pt-1">
+                  {item.caption}
+                </p>
+
+                {/* Subtle Click Indicator */}
+                <div className="pt-2 flex items-center gap-2 text-xs font-mono text-white/60 group-hover:text-white transition-colors">
                   <Eye className="w-3.5 h-3.5 text-[#e60064]" />
-                  <span>Click to expand HD</span>
-                </span>
-                <span className="text-[#e60064] font-bold group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
+                  <span>Click to expand high-resolution</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#e60064] group-hover:translate-x-1.5 transition-transform" />
+                </div>
+
               </div>
 
             </div>
@@ -222,8 +275,8 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
       </section>
 
       {/* The Rehearsal Room Narrative Ethos */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-12">
-        <div className="rounded-3xl bg-[#08080a] text-white p-8 sm:p-12 lg:p-14 space-y-8 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-10">
+        <div className="rounded-3xl bg-[#08080a] text-white p-8 sm:p-12 lg:p-14 space-y-8 relative overflow-hidden shadow-2xl border border-white/10">
           
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#e60064]/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -268,7 +321,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
           {/* Top Lightbox Bar */}
           <div className="flex items-center justify-between text-white z-20">
             <div className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase">
+              <span className="px-3.5 py-1 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase shadow-md">
                 {currentLightboxItem.category}
               </span>
               <span className="text-xs font-mono text-gray-400 hidden sm:inline">
@@ -278,7 +331,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
 
             <button
               onClick={() => setActiveLightboxIndex(null)}
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e60064] text-white flex items-center justify-center transition-all"
+              className="w-11 h-11 rounded-full bg-white/10 hover:bg-[#e60064] text-white flex items-center justify-center transition-all shadow-md"
               onMouseEnter={() => setCursorText && setCursorText('CLOSE')}
               onMouseLeave={() => setCursorText && setCursorText('')}
             >
@@ -292,24 +345,24 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
             {/* Prev Button */}
             <button
               onClick={handlePrev}
-              className="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-black/60 hover:bg-[#e60064] text-white flex items-center justify-center transition-all border border-white/20"
+              className="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-black/70 hover:bg-[#e60064] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
 
             {/* Image Frame */}
-            <div className="max-w-5xl max-h-[70vh] flex items-center justify-center">
+            <div className="max-w-5xl max-h-[72vh] flex items-center justify-center">
               <img
                 src={currentLightboxItem.image}
                 alt={currentLightboxItem.title}
-                className="max-h-[70vh] max-w-full object-contain rounded-2xl shadow-2xl border border-white/10"
+                className="max-h-[72vh] max-w-full object-contain rounded-2xl shadow-2xl border border-white/10"
               />
             </div>
 
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-black/60 hover:bg-[#e60064] text-white flex items-center justify-center transition-all border border-white/20"
+              className="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-black/70 hover:bg-[#e60064] text-white flex items-center justify-center transition-all border border-white/20 shadow-lg"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -317,7 +370,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
           </div>
 
           {/* Bottom Caption Bar */}
-          <div className="max-w-4xl mx-auto w-full bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 text-white border border-white/15 space-y-2 z-20 text-center sm:text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="max-w-4xl mx-auto w-full bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 text-white border border-white/15 space-y-2 z-20 text-center sm:text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
             <div className="space-y-1">
               <div className="flex items-center gap-2 justify-center sm:justify-start">
                 <span className="text-xs font-mono uppercase text-[#fbbf24] font-semibold">
@@ -340,7 +393,7 @@ export default function GalleryPage({ onNavigateHome, setCursorText }) {
               download={`${currentLightboxItem.id}.jpg`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/30 text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shrink-0"
+              className="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/30 text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shrink-0 shadow-sm"
             >
               <Download className="w-4 h-4" />
               <span>Full Resolution</span>
