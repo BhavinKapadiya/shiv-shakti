@@ -1,6 +1,5 @@
 import React from 'react';
 import { Calendar, MapPin, Clock, Ticket, ArrowRight, Eye, Play, Sparkles, ChevronRight } from 'lucide-react';
-import { NOW_SHOWING, THEATRE_INFO } from '../data/theatreData';
 
 export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, onOpenInvite, onOpenVideo, setCursorText }) {
   
@@ -60,13 +59,13 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
   ];
 
   return (
-    <section id="shows" className="py-20 sm:py-28 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100 relative overflow-hidden">
+    <section id="shows" className="pt-4 sm:pt-6 pb-16 sm:pb-24 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100 relative overflow-hidden">
       
-      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-gray-200 pb-8">
-          <div className="space-y-3 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-gray-200 pb-4 sm:pb-5">
+          <div className="space-y-2 max-w-2xl">
             
             {/* Pill Tag */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 border border-pink-200 text-xs font-mono font-bold text-[#e60064] uppercase tracking-wider">
@@ -74,102 +73,121 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
               <span>Section 02 • Next Performance</span>
             </div>
 
-            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] text-[#111111]">
-              where the curtain <br />
-              rises next.
+            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.1] text-[#111111]">
+              where the curtain rises next.
             </h2>
           </div>
 
-          <p className="text-base sm:text-lg text-[#555555] max-w-md font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-[#555555] max-w-md font-normal leading-relaxed">
             Highlighting our headline debut production and the upcoming season repertoire touring across India’s finest stages.
           </p>
         </div>
 
-        {/* 1. Main Featured Production Highlight: SHIV-SHAKTI */}
-        <div className="relative rounded-3xl bg-gradient-to-br from-[#121216] via-[#1a1a22] to-[#0f0f14] text-white p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl border border-gray-800">
+        {/* 1. Main Featured Production Highlight: SHIV-SHAKTI (with Kromme villa grid banner) */}
+        <div className="relative rounded-3xl bg-[#0d0d11] text-white overflow-hidden shadow-2xl border border-gray-800 transition-all duration-300 group">
           
-          {/* Subtle Ambient Background Lighting */}
+          {/* Subtle Ambient Background Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#e60064]/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Panoramic Widescreen Banner Container */}
+          <div className="relative w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[2.4/1] max-h-[380px] sm:max-h-[420px] bg-black overflow-hidden border-b border-gray-800">
+            <img
+              src="/assets/shiv-shakti-banner.jpg"
+              alt="When Shiv Met Shakti Banner — The Rhythm of Divinity Begins"
+              className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+            />
             
-            {/* Left Content Area */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Badges */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="px-3.5 py-1 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Headline Premiere
-                </span>
-                <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white/90 border border-white/15 text-xs font-mono font-medium uppercase">
-                  Season One Flagship
-                </span>
-                <span className="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs font-mono font-medium uppercase">
-                  100 Shows Pan-India Tour
-                </span>
-              </div>
+            {/* Gradient Overlay & Badges on Banner */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d11] via-transparent to-black/30 pointer-events-none" />
 
-              {/* Title & Subtitle */}
-              <div className="space-y-2">
-                <h3 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white leading-none">
+            {/* Top floating badges over banner */}
+            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap items-center gap-2 z-10">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#e60064] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Headline Premiere
+              </span>
+              <span className="px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md text-white/90 border border-white/20 text-xs font-mono font-medium uppercase">
+                Season One Flagship
+              </span>
+              <span className="hidden sm:inline-flex px-3 py-1.5 rounded-full bg-amber-400/20 backdrop-blur-md text-amber-300 border border-amber-400/40 text-xs font-mono font-medium uppercase">
+                100 Shows Pan-India
+              </span>
+            </div>
+
+            {/* Bottom Right Director Stamp on Banner */}
+            <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-10">
+              <span className="px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-white/80 text-[11px] font-mono uppercase tracking-wider">
+                Directed by <strong className="text-white font-semibold">Parth</strong>
+              </span>
+            </div>
+          </div>
+
+          {/* Details & Action Bar below the Banner */}
+          <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6">
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+              
+              {/* Left Column: Title, Subtitle & Description */}
+              <div className="lg:col-span-7 space-y-3">
+                <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white leading-none">
                   Shiv-Shakti
                 </h3>
-                <p className="text-lg sm:text-xl text-[#e60064] font-medium tracking-wide">
+                <p className="text-base sm:text-lg text-[#e60064] font-medium tracking-wide">
                   When Shiv Met Shakti — The Eternal Cosmic Dance
+                </p>
+                <p className="text-sm sm:text-base text-gray-300 font-normal leading-relaxed pt-1">
+                  An electrifying exploration of balance, cosmic tension, and grounded human emotion. Blending raw physical theatre, intense Indian folk percussion, and bold contemporary dramaturgy, Shiv-Shakti questions where divine archetypes live inside modern conflicts.
                 </p>
               </div>
 
-              {/* Meta Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-sm text-gray-300">
+              {/* Right Column: Performance Meta Grid */}
+              <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
                   <Calendar className="w-4 h-4 text-[#e60064] shrink-0" />
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-gray-400 block">Performance Dates</span>
-                    <strong className="text-white font-semibold">12–14 September 2026</strong>
+                    <span className="text-[10px] font-mono uppercase text-gray-400 block">Performance Dates</span>
+                    <strong className="text-white font-semibold text-xs sm:text-sm">12–14 September 2026</strong>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
                   <MapPin className="w-4 h-4 text-[#e60064] shrink-0" />
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-gray-400 block">Venue & City</span>
-                    <strong className="text-white font-semibold">Royal Opera House • Mumbai</strong>
+                    <span className="text-[10px] font-mono uppercase text-gray-400 block">Venue & City</span>
+                    <strong className="text-white font-semibold text-xs sm:text-sm">Royal Opera House • Mumbai</strong>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
                   <Clock className="w-4 h-4 text-amber-400 shrink-0" />
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-gray-400 block">Runtime & Intermission</span>
-                    <strong className="text-white font-semibold">115 Mins (With Interval)</strong>
+                    <span className="text-[10px] font-mono uppercase text-gray-400 block">Runtime</span>
+                    <strong className="text-white font-semibold text-xs sm:text-sm">115 Mins (With Interval)</strong>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
                   <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-gray-400 block">Genre & Score</span>
-                    <strong className="text-white font-semibold">Drama • Live Folk Percussion</strong>
+                    <span className="text-[10px] font-mono uppercase text-gray-400 block">Genre & Score</span>
+                    <strong className="text-white font-semibold text-xs sm:text-sm">Drama • Live Percussion</strong>
                   </div>
                 </div>
 
               </div>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-gray-300 font-normal leading-relaxed">
-                An electrifying exploration of balance, cosmic tension, and grounded human emotion. Blending raw physical theatre, intense Indian folk percussion, and bold contemporary dramaturgy, Shiv-Shakti questions where divine archetypes live inside modern conflicts.
-              </p>
+            </div>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                
+            {/* Bottom Action Buttons Row */}
+            <div className="pt-4 border-t border-gray-800 flex flex-wrap items-center justify-between gap-4">
+              
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 {/* Book Tickets */}
                 <button
                   onClick={onOpenBooking}
-                  className="px-7 py-3.5 rounded-xl bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#e60064]/40 flex items-center gap-2 group"
+                  className="px-6 sm:px-8 py-3 rounded-xl bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#e60064]/40 flex items-center gap-2 group"
                   onMouseEnter={() => setCursorText && setCursorText('BOOK')}
                   onMouseLeave={() => setCursorText && setCursorText('')}
                 >
@@ -181,7 +199,7 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
                 {/* View Show Info */}
                 <button
                   onClick={onOpenShowInfo}
-                  className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-display text-sm font-bold uppercase tracking-wider transition-all flex items-center gap-2"
+                  className="px-5 sm:px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider transition-all flex items-center gap-2"
                   onMouseEnter={() => setCursorText && setCursorText('INFO')}
                   onMouseLeave={() => setCursorText && setCursorText('')}
                 >
@@ -192,58 +210,32 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
                 {/* Stage Reel */}
                 <button
                   onClick={onOpenVideo}
-                  className="px-5 py-3.5 rounded-xl text-gray-300 hover:text-white font-display text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 hover:bg-white/5"
+                  className="px-4 py-3 rounded-xl text-gray-300 hover:text-white font-display text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2 hover:bg-white/5"
                 >
                   <Play className="w-3.5 h-3.5 fill-current text-[#e60064]" />
                   <span>Watch Teaser</span>
                 </button>
-
               </div>
 
-            </div>
-
-            {/* Right Poster Artwork Area */}
-            <div className="lg:col-span-5 flex justify-center items-center">
-              <div className="relative group w-full max-w-[340px] sm:max-w-[380px]">
-                
-                {/* Glow behind poster */}
-                <div className="absolute -inset-2 bg-gradient-to-tr from-[#e60064] via-amber-500 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-500" />
-                
-                {/* Poster Frame */}
-                <div className="relative rounded-2xl overflow-hidden bg-black border border-white/20 shadow-2xl">
-                  <img
-                    src="/assets/Final.png"
-                    alt="Shiv-Shakti Headline Production"
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  
-                  {/* Bottom overlay info */}
-                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black via-black/80 to-transparent flex items-center justify-between">
-                    <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 block">Directed by</span>
-                      <span className="text-xs font-bold text-white uppercase">Parth • Areeso Theatre</span>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-md bg-[#e60064] text-white text-[10px] font-mono font-bold uppercase">
-                      Mumbai & Ahmedabad
-                    </span>
-                  </div>
-                </div>
-
+              <div className="hidden md:flex items-center gap-2 text-xs font-mono text-gray-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Ahmedabad & Delhi dates announcing soon</span>
               </div>
+
             </div>
 
           </div>
         </div>
 
         {/* 2. Upcoming Performances / Tour Schedule Grid */}
-        <div className="space-y-8 pt-4">
+        <div className="space-y-6 pt-2">
           
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div className="space-y-1">
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#e60064] block">
                 Season One Tour Schedule
               </span>
-              <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#111111] uppercase tracking-tight">
+              <h3 className="font-display font-black text-2xl sm:text-3xl text-[#111111] uppercase tracking-tight">
                 More Upcoming Shows & Cities
               </h3>
             </div>
@@ -258,13 +250,13 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {upcomingShows.map((show) => (
               <div
                 key={show.id}
                 className="group flex flex-col justify-between rounded-2xl bg-[#fafafa] hover:bg-white border border-gray-200 hover:border-gray-900/40 p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative"
               >
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   
                   {/* Show Image Header */}
                   <div className="relative rounded-xl overflow-hidden aspect-[16/10] bg-gray-200">
@@ -287,7 +279,7 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
                     </h4>
 
                     {/* Meta Chips */}
-                    <div className="space-y-1.5 text-xs text-[#555555]">
+                    <div className="space-y-1 text-xs text-[#555555]">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-3.5 h-3.5 text-[#e60064] shrink-0" />
                         <span className="font-semibold text-[#111111]">{show.dates}</span>
@@ -298,7 +290,7 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
                       </div>
                     </div>
 
-                    <p className="text-xs text-[#666666] leading-relaxed pt-1 line-clamp-2">
+                    <p className="text-xs text-[#666666] leading-relaxed pt-0.5 line-clamp-2">
                       {show.description}
                     </p>
                   </div>
@@ -306,10 +298,10 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
                 </div>
 
                 {/* Bottom Buttons */}
-                <div className="pt-5 mt-4 border-t border-gray-200/80 flex items-center justify-between gap-2">
+                <div className="pt-4 mt-3 border-t border-gray-200/80 flex items-center justify-between gap-2">
                   <button
                     onClick={onOpenShowInfo}
-                    className="px-3 py-2 rounded-lg text-xs font-display font-bold uppercase tracking-wider text-[#111111] hover:bg-gray-100 flex items-center gap-1 transition-colors"
+                    className="px-3 py-1.5 rounded-lg text-xs font-display font-bold uppercase tracking-wider text-[#111111] hover:bg-gray-100 flex items-center gap-1 transition-colors"
                   >
                     <span>View Show</span>
                     <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
@@ -317,7 +309,7 @@ export default function NextPerformanceSection({ onOpenBooking, onOpenShowInfo, 
 
                   <button
                     onClick={onOpenBooking}
-                    className="px-4 py-2 rounded-lg bg-[#111111] hover:bg-[#e60064] text-white text-xs font-display font-bold uppercase tracking-wider transition-all duration-300 shadow-sm flex items-center gap-1.5"
+                    className="px-4 py-1.5 rounded-lg bg-[#111111] hover:bg-[#e60064] text-white text-xs font-display font-bold uppercase tracking-wider transition-all duration-300 shadow-sm flex items-center gap-1.5"
                   >
                     <Ticket className="w-3.5 h-3.5" />
                     <span>Book</span>

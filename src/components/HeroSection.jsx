@@ -4,7 +4,7 @@ import { THEATRE_INFO, NOW_SHOWING } from '../data/theatreData';
 
 export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, setCursorText }) {
   return (
-    <section id="hero" className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
+    <section id="hero" className="relative pt-24 sm:pt-28 pb-4 sm:pb-6 px-6 sm:px-8 md:px-12 bg-white overflow-hidden">
       
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
