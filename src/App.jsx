@@ -12,6 +12,7 @@ import ArchiveSection from './components/ArchiveSection';
 import FaqSection from './components/FaqSection';
 import SponsorshipPage from './components/SponsorshipPage';
 import GalleryPage from './components/GalleryPage';
+import ShivShaktiDeckPage from './components/ShivShaktiDeckPage';
 import Footer from './components/Footer';
 
 // Modals
@@ -24,7 +25,7 @@ import ShowInfoModal from './components/Modals/ShowInfoModal';
 import AboutModal from './components/Modals/AboutModal';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'sponsorship' | 'gallery'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'sponsorship' | 'gallery' | 'shiv-shakti-deck'
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cursorText, setCursorText] = useState('');
   
@@ -47,7 +48,10 @@ export default function App() {
       } else if (hash === '#gallery' || hash === '#moments') {
         setCurrentPage('gallery');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (currentPage === 'sponsorship' || currentPage === 'gallery') {
+      } else if (hash === '#shiv-shakti-deck' || hash === '#deck' || hash === '#dossier') {
+        setCurrentPage('shiv-shakti-deck');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (currentPage === 'sponsorship' || currentPage === 'gallery' || currentPage === 'shiv-shakti-deck') {
         setCurrentPage('home');
       }
     };
@@ -70,6 +74,13 @@ export default function App() {
     if (targetId === 'gallery') {
       setCurrentPage('gallery');
       window.location.hash = '#gallery';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (targetId === 'shiv-shakti-deck') {
+      setCurrentPage('shiv-shakti-deck');
+      window.location.hash = '#shiv-shakti-deck';
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -128,6 +139,11 @@ export default function App() {
         />
       ) : currentPage === 'gallery' ? (
         <GalleryPage
+          onNavigateHome={() => handleNavigate('hero')}
+          setCursorText={setCursorText}
+        />
+      ) : currentPage === 'shiv-shakti-deck' ? (
+        <ShivShaktiDeckPage
           onNavigateHome={() => handleNavigate('hero')}
           setCursorText={setCursorText}
         />

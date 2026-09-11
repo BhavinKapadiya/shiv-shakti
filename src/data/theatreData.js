@@ -353,6 +353,7 @@ export const FAQS = [
 
 export const MENU_ITEMS = [
   { label: "Shows", href: "#shows", targetId: "shows", marquee: "SHIV-SHAKTI • MUMBAI PREMIERE • DATES ANNOUNCING SOON • LIVE TICKETS" },
+  { label: "Shiv-Shakti Deck", href: "#shiv-shakti-deck", targetId: "shiv-shakti-deck", marquee: "OFFICIAL SHOW DOSSIER • 15 SLIDES • CAST SPOTLIGHT • NANDINI • RUMIT SHARMA" },
   { label: "About", href: "#about", targetId: "about", marquee: "FIVE ACTORS • ONE BORROWED SPOTLIGHT • STORIES ROOTED IN OUR SOIL" },
   { label: "Productions", href: "#productions", targetId: "productions", marquee: "SEASON ONE • SHIV-SHAKTI • ANDHA YUG • CHANDNI RAATEIN" },
   { label: "Artists", href: "#artists", targetId: "artists", marquee: "PARTH • MEHER IRANI • SOURAV DAS • PRIYA NAIR • THE COMPANY" },
