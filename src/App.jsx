@@ -11,6 +11,7 @@ import ContactSection from './components/ContactSection';
 import ArchiveSection from './components/ArchiveSection';
 import FaqSection from './components/FaqSection';
 import SponsorshipPage from './components/SponsorshipPage';
+import GalleryPage from './components/GalleryPage';
 import Footer from './components/Footer';
 
 // Modals
@@ -23,7 +24,7 @@ import ShowInfoModal from './components/Modals/ShowInfoModal';
 import AboutModal from './components/Modals/AboutModal';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'sponsorship'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'sponsorship' | 'gallery'
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cursorText, setCursorText] = useState('');
   
@@ -43,7 +44,10 @@ export default function App() {
       if (hash === '#sponsorship' || hash === '#sponsors' || hash === '#partnership') {
         setCurrentPage('sponsorship');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (currentPage === 'sponsorship') {
+      } else if (hash === '#gallery' || hash === '#moments') {
+        setCurrentPage('gallery');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (currentPage === 'sponsorship' || currentPage === 'gallery') {
         setCurrentPage('home');
       }
     };
@@ -63,7 +67,14 @@ export default function App() {
       return;
     }
 
-    if (currentPage === 'sponsorship') {
+    if (targetId === 'gallery') {
+      setCurrentPage('gallery');
+      window.location.hash = '#gallery';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (currentPage !== 'home') {
       setCurrentPage('home');
       window.location.hash = targetId === 'hero' ? '' : `#${targetId}`;
       setTimeout(() => {
@@ -115,6 +126,11 @@ export default function App() {
           onNavigateHome={() => handleNavigate('hero')}
           setCursorText={setCursorText}
         />
+      ) : currentPage === 'gallery' ? (
+        <GalleryPage
+          onNavigateHome={() => handleNavigate('hero')}
+          setCursorText={setCursorText}
+        />
       ) : (
         /* Main Home Page Flow */
         <main>
@@ -161,13 +177,8 @@ export default function App() {
           {/* 8. Moments ("From the Wings" Gallery & Lightbox) */}
           <GallerySection
             onSelectMoment={(moment) => setSelectedMoment(moment)}
-            onOpenFullGallery={() => setSelectedMoment({
-              id: 'moment-all',
-              title: 'Stage & Rehearsal Moments',
-              category: 'Stage Light',
-              caption: 'The solitary amber cone before actors take their marks.',
-              image: '/assets/shiv-damru-panel.png'
-            })}
+            onOpenFullGallery={() => handleNavigate('gallery')}
+            onNavigate={handleNavigate}
             setCursorText={setCursorText}
           />
 

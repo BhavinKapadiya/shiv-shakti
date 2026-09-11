@@ -203,48 +203,99 @@ export const ARTISTS = [
 export const MOMENTS_GALLERY = [
   {
     id: "moment-1",
-    title: "The Rhythm of Divinity Begins",
-    subtitle: "From the Wings",
-    category: "Stage Light",
-    caption: "The solitary amber cone and divine Damru resonance before actors take their marks.",
-    image: "/assets/shiv-damru-panel.png",
-    span: "col-span-12 md:col-span-8"
+    title: "Script Table Read & Character Exploration",
+    subtitle: "The Circle of Truth",
+    category: "Table Reads",
+    caption: "The complete ensemble sitting in a circle on the rehearsal floor, marking scripts and dissecting subtext line by line.",
+    image: "/assets/galary/script-table-read-circle.jpeg",
+    span: "col-span-12 md:col-span-8",
+    aspect: "aspect-[16/10]",
+    date: "August 2026",
+    location: "Areeso Rehearsal Studios, Mumbai"
   },
   {
     id: "moment-2",
-    title: "Cosmic Union & Dance",
-    subtitle: "Sacred Movement",
-    category: "Backstage",
-    caption: "They were never just two. They were one — cosmic choreography in celestial light.",
-    image: "/assets/shiv-shakti-dance.png",
-    span: "col-span-12 md:col-span-4"
+    title: "The Rehearsal Blackbox Stage",
+    subtitle: "Studio Space",
+    category: "Studio Stage",
+    caption: "Our intimate rehearsal stage with black acoustic drapes, warm pendant filament lamps, and modular velvet acting blocks.",
+    image: "/assets/galary/studio-blackbox-stage.jpeg",
+    span: "col-span-12 md:col-span-4",
+    aspect: "aspect-[4/3]",
+    date: "September 2026",
+    location: "Studio Blackbox, Mumbai"
   },
   {
     id: "moment-3",
-    title: "Physical Rehearsal",
-    subtitle: "Movement & Rhythm",
-    category: "Rehearsals",
-    caption: "14 hours into choreographing the climactic tandem sequence.",
-    image: "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?auto=format&fit=crop&w=800&q=80",
-    span: "col-span-12 md:col-span-4"
+    title: "Live Monologue Workshop & Feedback",
+    subtitle: "Actor's Crucible",
+    category: "Performances",
+    caption: "Lead actress delivering an emotionally raw monologue on the studio riser under direct peer and directorial evaluation.",
+    image: "/assets/galary/monologue-showcase.jpeg",
+    span: "col-span-12 md:col-span-4",
+    aspect: "aspect-[4/5]",
+    date: "September 2026",
+    location: "Studio Blackbox Stage"
   },
   {
     id: "moment-4",
-    title: "Live Percussion Sync",
-    subtitle: "Soundcheck Ritual",
-    category: "Music",
-    caption: "Tuning the pakhawaj and djembe with stage acoustic resonance.",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
-    span: "col-span-12 md:col-span-4"
+    title: "Scene Direction & Blocking Session",
+    subtitle: "From Page to Stage",
+    category: "Rehearsals",
+    caption: "Director Parth working closely with senior and emerging actors on spatial timing and character motivations.",
+    image: "/assets/galary/scene-direction-blocking.jpeg",
+    span: "col-span-12 md:col-span-4",
+    aspect: "aspect-[16/10]",
+    date: "August 2026",
+    location: "Areeso Rehearsal Studios"
   },
   {
     id: "moment-5",
-    title: "Standing Ovation",
-    subtitle: "Curtain Call",
-    category: "Audience",
-    caption: "The connection between the wooden floor and four hundred hearts.",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
-    span: "col-span-12 md:col-span-4"
+    title: "Full Cast & Crew Production Briefing",
+    subtitle: "Ensemble Unity",
+    category: "Rehearsals",
+    caption: "The entire creative unit of actors, light designers, and production managers assembled before run-throughs.",
+    image: "/assets/galary/full-ensemble-briefing.jpeg",
+    span: "col-span-12 md:col-span-4",
+    aspect: "aspect-[16/9]",
+    date: "September 2026",
+    location: "Main Rehearsal Hall"
+  },
+  {
+    id: "moment-6",
+    title: "Movement & Spatial Dynamics Studio",
+    subtitle: "The Floor",
+    category: "Studio Stage",
+    caption: "The full mirrored movement floor where physical choreography, stage combat, and folk rhythms are honed.",
+    image: "/assets/galary/movement-studio-hall.jpeg",
+    span: "col-span-12 md:col-span-6",
+    aspect: "aspect-[16/10]",
+    date: "August 2026",
+    location: "Dance & Movement Floor"
+  },
+  {
+    id: "moment-7",
+    title: "Young Ensemble Table Read",
+    subtitle: "Next Gen Voices",
+    category: "Table Reads",
+    caption: "Emerging actors deeply absorbed in character work, developing chemistry before taking the stage floor.",
+    image: "/assets/galary/ensemble-read-session.jpeg",
+    span: "col-span-12 md:col-span-6",
+    aspect: "aspect-[16/9]",
+    date: "September 2026",
+    location: "Studio Lounge & Reading Room"
+  },
+  {
+    id: "moment-8",
+    title: "When Shiv Met Shakti — Panoramic Stage Concept",
+    subtitle: "Production Vision",
+    category: "Production Stills",
+    caption: "The cosmic triptych visual representing the raw energy, rhythm of the damru, and eternal cosmic union.",
+    image: "/assets/shiv-shakti-banner.jpg",
+    span: "col-span-12",
+    aspect: "aspect-[2.4/1]",
+    date: "2026 Season One",
+    location: "Production Concept Design"
   }
 ];
 
