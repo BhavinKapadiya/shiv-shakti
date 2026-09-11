@@ -135,10 +135,12 @@ export default function App() {
             setCursorText={setCursorText}
           />
 
-          {/* 4. Dark Repertoire & Filter View (Matches Screenshot 5) */}
+          {/* 4. Past Productions & Archive Repertoire */}
           <ProductionsFilterSection
             onOpenBooking={() => setIsBookingOpen(true)}
             onOpenShowInfo={() => setIsShowInfoOpen(true)}
+            onOpenInvite={() => setIsInviteOpen(true)}
+            onOpenVideo={() => setIsVideoOpen(true)}
             setCursorText={setCursorText}
           />
 
