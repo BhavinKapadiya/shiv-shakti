@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import NavigationMenu from './components/NavigationMenu';
 import HeroSection from './components/HeroSection';
-import ManifestoSection from './components/ManifestoSection';
+import NextPerformanceSection from './components/NextPerformanceSection';
 import WorksSection from './components/WorksSection';
 import ProductionsFilterSection from './components/ProductionsFilterSection';
 import OurStory from './components/OurStory';
@@ -127,8 +127,12 @@ export default function App() {
             setCursorText={setCursorText}
           />
 
-          {/* 3. Manifesto & Awards with Emoji Stickers (Matches Screenshot 2) */}
-          <ManifestoSection
+          {/* 3. Section 2 — Next Performance (Shiv-Shakti Headline & Upcoming Schedule) */}
+          <NextPerformanceSection
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onOpenShowInfo={() => setIsShowInfoOpen(true)}
+            onOpenInvite={() => setIsInviteOpen(true)}
+            onOpenVideo={() => setIsVideoOpen(true)}
             setCursorText={setCursorText}
           />
 
