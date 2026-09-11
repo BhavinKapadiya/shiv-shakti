@@ -44,9 +44,7 @@ export const SPONSORSHIP_SLIDES = [
 
 export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'deck'
   const [lightboxIndex, setLightboxIndex] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('All');
 
   // Form State
   const [formData, setFormData] = useState({
@@ -58,12 +56,6 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
     message: ''
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const categories = ['All', 'Executive Overview', 'Artistic Vision', 'Tour & Reach', 'Partnership Packages', 'Brand Activations', 'Hospitality & Access'];
-
-  const filteredSlides = activeCategory === 'All' 
-    ? SPONSORSHIP_SLIDES 
-    : SPONSORSHIP_SLIDES.filter(s => s.category.toLowerCase().includes(activeCategory.toLowerCase()));
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -257,216 +249,273 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
         </div>
       </section>
 
-      {/* Main Presentation Slides Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-16">
+      {/* Main Presentation Document Reader Section (Option 1) */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-12">
         
-        {/* Controls Bar: Category Filters & View Mode Toggles */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-gray-200">
-          <div>
-            <h2 className="font-display font-black text-2xl sm:text-4xl text-[#111111] tracking-tight">
-              Official Pitch Deck Presentation
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-gray-200">
+          <div className="space-y-2 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-[#e60064] text-xs font-mono font-bold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>OFFICIAL SPONSORSHIP PITCH DECK</span>
+            </div>
+            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#111111] tracking-tight">
+              Interactive Deck Document Reader
             </h2>
-            <p className="text-xs sm:text-sm font-mono text-[#666666] pt-1">
-              Explore all 15 official deck slides below • Click any slide to view high-resolution fullscreen
+            <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
+              Explore the complete 15-slide strategic pitch deck slide-by-slide below. Use the chapter index on the left to jump directly to specific topics or click the stage for high-resolution fullscreen view.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
-            {/* View Mode Toggle */}
-            <div className="flex items-center p-1 rounded-lg bg-gray-100 border border-gray-200">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`px-3.5 py-1.5 rounded-md text-xs font-display font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all ${
-                  viewMode === 'grid' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#666666] hover:text-[#111111]'
-                }`}
-              >
-                <Grid className="w-3.5 h-3.5" />
-                <span>Grid View</span>
-              </button>
-              <button
-                onClick={() => setViewMode('deck')}
-                className={`px-3.5 py-1.5 rounded-md text-xs font-display font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all ${
-                  viewMode === 'deck' ? 'bg-[#111111] text-white shadow-sm' : 'text-[#666666] hover:text-[#111111]'
-                }`}
-              >
-                <Layers className="w-3.5 h-3.5" />
-                <span>Deck Viewer</span>
-              </button>
-            </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={() => setLightboxIndex(activeSlideIndex)}
+              className="px-4 py-2.5 rounded-xl border border-gray-300 hover:border-black bg-white hover:bg-gray-50 text-[#111111] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-sm"
+            >
+              <Maximize2 className="w-4 h-4 text-[#e60064]" />
+              <span>Fullscreen HD</span>
+            </button>
+            <a
+              href="/assets/sponsership/shiv-shakti-pitch-deck.pdf"
+              download="Shiv-Shakti-Sponsorship-Pitch-Deck.pdf"
+              className="px-4 py-2.5 rounded-xl bg-[#111111] hover:bg-[#e60064] text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-sm group"
+            >
+              <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Download PDF</span>
+            </a>
           </div>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap items-center gap-2 py-6">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider transition-all ${
-                activeCategory === cat
-                  ? 'bg-[#e60064] text-white font-bold shadow-md'
-                  : 'bg-gray-100 text-[#555555] hover:bg-gray-200 hover:text-black border border-gray-200'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+        {/* Option 1: Document Reader Console */}
+        <div className="mt-8 rounded-3xl bg-[#0e0e12] border border-gray-800 text-white shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          
+          {/* Left Column: Chapter & Table of Contents Sidebar */}
+          <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col bg-[#131318]">
+            
+            {/* Sidebar Header */}
+            <div className="p-5 border-b border-white/10 flex items-center justify-between bg-black/30">
+              <div className="flex items-center gap-2">
+                <FileText className="w-4 h-4 text-[#e60064]" />
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-white">
+                  Table of Contents
+                </span>
+              </div>
+              <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/70 text-[10px] font-mono">
+                {SPONSORSHIP_SLIDES.length} Slides
+              </span>
+            </div>
 
-        {/* VIEW MODE 1: Interactive Deck Viewer Carousel */}
-        {viewMode === 'deck' && (
-          <div className="space-y-6 bg-gray-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl">
-            {/* Active Slide Display */}
-            <div className="relative aspect-[16/9] w-full max-w-5xl mx-auto rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl group">
-              <img
-                src={`/assets/sponsership/${SPONSORSHIP_SLIDES[activeSlideIndex].file}`}
-                alt={SPONSORSHIP_SLIDES[activeSlideIndex].title}
-                className="w-full h-full object-contain cursor-pointer"
-                onClick={() => setLightboxIndex(activeSlideIndex)}
-              />
+            {/* Slide Index List */}
+            <div className="p-3 space-y-1.5 max-h-[340px] sm:max-h-[420px] lg:max-h-[620px] overflow-y-auto scrollbar-thin">
+              {SPONSORSHIP_SLIDES.map((slide, idx) => {
+                const isActive = activeSlideIndex === idx;
+                return (
+                  <button
+                    key={slide.id}
+                    onClick={() => setActiveSlideIndex(idx)}
+                    className={`w-full text-left p-3 rounded-xl transition-all flex items-start gap-3 group relative ${
+                      isActive
+                        ? 'bg-[#e60064] text-white shadow-lg'
+                        : 'bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/5'
+                    }`}
+                  >
+                    {/* Slide Number Badge */}
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold shrink-0 mt-0.5 ${
+                      isActive 
+                        ? 'bg-black text-[#fbbf24]' 
+                        : 'bg-white/10 text-gray-400 group-hover:text-white'
+                    }`}>
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
 
-              {/* Top Banner with Slide info */}
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                <span className="px-3.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#fbbf24] text-xs font-mono font-bold border border-white/20">
+                    {/* Slide Meta Info */}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`text-[10px] font-mono uppercase tracking-wider truncate ${
+                          isActive ? 'text-white/90' : 'text-[#e60064] group-hover:text-pink-400'
+                        }`}>
+                          {slide.category}
+                        </span>
+                      </div>
+                      <p className={`text-xs font-display font-semibold truncate mt-0.5 ${
+                        isActive ? 'text-white' : 'text-gray-200 group-hover:text-white'
+                      }`}>
+                        {slide.title}
+                      </p>
+                    </div>
+
+                    {/* Active Chevron Indicator */}
+                    {isActive && (
+                      <span className="text-xs font-bold shrink-0 text-white animate-pulse">
+                        ▶
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Sidebar Bottom Quick Stats */}
+            <div className="p-4 border-t border-white/10 bg-black/40 text-[11px] font-mono text-gray-400 hidden sm:flex items-center justify-between">
+              <span>Shiv-Shakti Pan-India Tour</span>
+              <span className="text-[#e60064] font-bold">100 Shows</span>
+            </div>
+
+          </div>
+
+          {/* Right Column: Main Slide Stage & Contextual Panel */}
+          <div className="lg:col-span-8 flex flex-col justify-between bg-black">
+            
+            {/* Stage Top Bar */}
+            <div className="p-4 sm:px-6 border-b border-white/10 flex items-center justify-between bg-white/[0.02]">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="px-2.5 py-1 rounded-md bg-[#e60064] text-white text-xs font-mono font-bold">
                   Slide {activeSlideIndex + 1} of {SPONSORSHIP_SLIDES.length}
                 </span>
+                <span className="text-xs font-mono text-gray-400 hidden sm:inline">
+                  • {SPONSORSHIP_SLIDES[activeSlideIndex].category}
+                </span>
+              </div>
+
+              {/* Prev / Next Buttons */}
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={() => setActiveSlideIndex((prev) => (prev - 1 + SPONSORSHIP_SLIDES.length) % SPONSORSHIP_SLIDES.length)}
+                  className="p-1.5 sm:px-3 sm:py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-mono flex items-center gap-1 transition-all"
+                  title="Previous Slide (Arrow Left)"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  <span className="hidden sm:inline">Prev</span>
+                </button>
+                <button
+                  onClick={() => setActiveSlideIndex((prev) => (prev + 1) % SPONSORSHIP_SLIDES.length)}
+                  className="p-1.5 sm:px-3 sm:py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-mono flex items-center gap-1 transition-all"
+                  title="Next Slide (Arrow Right)"
+                >
+                  <span className="hidden sm:inline">Next</span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
                 <button
                   onClick={() => setLightboxIndex(activeSlideIndex)}
-                  className="pointer-events-auto p-2 rounded-full bg-black/80 backdrop-blur-md text-white hover:bg-[#e60064] transition-colors border border-white/20"
+                  className="p-1.5 sm:p-2 rounded-lg bg-[#e60064] hover:bg-[#ff007a] text-white transition-all ml-1 shadow-sm"
+                  title="Open Fullscreen Lightbox"
                 >
-                  <Maximize2 className="w-4 h-4" />
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </button>
               </div>
-
-              {/* Prev / Next Overlay Controls */}
-              <button
-                onClick={() => setActiveSlideIndex((prev) => (prev - 1 + SPONSORSHIP_SLIDES.length) % SPONSORSHIP_SLIDES.length)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 hover:bg-[#e60064] text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/20 opacity-80 hover:opacity-100"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => setActiveSlideIndex((prev) => (prev + 1) % SPONSORSHIP_SLIDES.length)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 hover:bg-[#e60064] text-white flex items-center justify-center transition-all backdrop-blur-md border border-white/20 opacity-80 hover:opacity-100"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
             </div>
 
-            {/* Slide Meta & Captions */}
-            <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-              <div className="space-y-1">
-                <p className="text-xs font-mono text-[#e60064] uppercase tracking-widest font-bold">
-                  {SPONSORSHIP_SLIDES[activeSlideIndex].category}
-                </p>
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
-                  {SPONSORSHIP_SLIDES[activeSlideIndex].title}
-                </h3>
-                <p className="text-xs text-white/60">
-                  {SPONSORSHIP_SLIDES[activeSlideIndex].desc}
-                </p>
-              </div>
+            {/* Main Stage: High-Resolution Slide Display */}
+            <div className="p-4 sm:p-6 flex-1 flex items-center justify-center bg-black/90">
+              <div 
+                onClick={() => setLightboxIndex(activeSlideIndex)}
+                className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-[#0a0a0e] border border-white/15 cursor-pointer group shadow-2xl transition-all duration-300"
+              >
+                <img
+                  src={`/assets/sponsership/${SPONSORSHIP_SLIDES[activeSlideIndex].file}`}
+                  alt={SPONSORSHIP_SLIDES[activeSlideIndex].title}
+                  className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                />
 
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono text-white/50">Jump to:</span>
-                <select
-                  value={activeSlideIndex}
-                  onChange={(e) => setActiveSlideIndex(Number(e.target.value))}
-                  className="bg-black/80 border border-white/20 text-white rounded-lg px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#e60064]"
-                >
-                  {SPONSORSHIP_SLIDES.map((s, idx) => (
-                    <option key={s.id} value={idx}>
-                      {idx + 1}. {s.title.slice(0, 30)}...
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+                {/* Ambient Click-to-Zoom Hover Hint */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-bold flex items-center gap-2 transform group-hover:scale-105 transition-transform shadow-xl">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#e60064]" />
+                    <span>Click for Fullscreen HD Lightbox</span>
+                  </div>
+                </div>
 
-            {/* Thumbnails Strip */}
-            <div className="max-w-5xl mx-auto flex items-center gap-2.5 overflow-x-auto pb-2 pt-4 scrollbar-thin">
-              {SPONSORSHIP_SLIDES.map((slide, idx) => (
+                {/* Left/Right Click Nav Hotspots */}
                 <button
-                  key={slide.id}
-                  onClick={() => setActiveSlideIndex(idx)}
-                  className={`relative shrink-0 w-24 aspect-[16/9] rounded-lg overflow-hidden border-2 transition-all ${
-                    activeSlideIndex === idx ? 'border-[#e60064] scale-105 shadow-md' : 'border-white/20 opacity-60 hover:opacity-100'
-                  }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveSlideIndex((prev) => (prev - 1 + SPONSORSHIP_SLIDES.length) % SPONSORSHIP_SLIDES.length);
+                  }}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-[#e60064] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all border border-white/20 shadow-lg"
+                  aria-label="Previous Slide"
                 >
-                  <img
-                    src={`/assets/sponsership/${slide.file}`}
-                    alt={slide.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <span className="absolute bottom-1 right-1 text-[9px] font-mono font-bold bg-black/80 px-1 rounded text-white">
-                    {idx + 1}
-                  </span>
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
-              ))}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveSlideIndex((prev) => (prev + 1) % SPONSORSHIP_SLIDES.length);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-[#e60064] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all border border-white/20 shadow-lg"
+                  aria-label="Next Slide"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
-          </div>
-        )}
 
-        {/* VIEW MODE 2: High-Resolution All 15 Slides Grid */}
-        {viewMode === 'grid' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredSlides.map((slide) => (
-              <div
-                key={slide.id}
-                onClick={() => setLightboxIndex(slide.id)}
-                className="group cursor-pointer rounded-2xl bg-white border border-gray-200 hover:border-gray-900 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-              >
-                {/* Slide Image Frame */}
-                <div className="relative aspect-[16/9] bg-gray-900 overflow-hidden">
-                  <img
-                    src={`/assets/sponsership/${slide.file}`}
-                    alt={slide.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                  {/* Top Slide Number Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono font-bold">
-                    Slide {slide.id + 1}
-                  </div>
-
-                  {/* Top Category Tag */}
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-[#111111] text-[10px] font-mono font-semibold">
-                    {slide.category}
-                  </div>
-
-                  {/* Zoom Hover Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-11 h-11 rounded-full bg-[#e60064] text-white flex items-center justify-center shadow-xl">
-                      <Maximize2 className="w-5 h-5" />
-                    </div>
-                  </div>
+            {/* Slide Metadata & Key Takeaways Panel */}
+            <div className="p-5 sm:p-6 border-t border-white/10 bg-[#111116] space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-[11px] font-mono text-[#e60064] font-bold uppercase tracking-wider">
+                    {SPONSORSHIP_SLIDES[activeSlideIndex].category}
+                  </span>
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-white">
+                    {SPONSORSHIP_SLIDES[activeSlideIndex].title}
+                  </h3>
+                  <p className="text-xs text-gray-300 leading-relaxed max-w-2xl">
+                    {SPONSORSHIP_SLIDES[activeSlideIndex].desc}
+                  </p>
                 </div>
 
-                {/* Card Text & Metadata */}
-                <div className="p-5 space-y-2 bg-white flex-1 flex flex-col justify-between">
-                  <div className="space-y-1">
-                    <h3 className="font-display font-bold text-lg text-[#111111] group-hover:text-[#e60064] transition-colors leading-tight">
-                      {slide.title}
-                    </h3>
-                    <p className="text-xs text-[#666666] font-normal leading-relaxed line-clamp-2">
-                      {slide.desc}
-                    </p>
-                  </div>
+                <button
+                  onClick={() => {
+                    setFormData(prev => ({ ...prev, message: `Inquiring about presentation section: ${SPONSORSHIP_SLIDES[activeSlideIndex].title}` }));
+                    const el = document.getElementById('partnership-form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="shrink-0 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-[#e60064] text-white text-xs font-display font-bold uppercase tracking-wider border border-white/15 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Inquire This Section</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
 
-                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-mono text-[#777777] group-hover:text-[#111111] transition-colors">
-                    <span>View High-Res Slide</span>
-                    <span className="font-bold text-[#e60064] group-hover:translate-x-1 transition-transform">↗</span>
-                  </div>
+              {/* Bottom Interactive Thumbnail Strip / Filmstrip */}
+              <div className="pt-3 border-t border-white/10">
+                <p className="text-[10px] font-mono text-gray-400 uppercase tracking-widest pb-2">
+                  All 15 Slides Filmstrip Scrubber
+                </p>
+                <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
+                  {SPONSORSHIP_SLIDES.map((slide, idx) => {
+                    const isActive = activeSlideIndex === idx;
+                    return (
+                      <button
+                        key={slide.id}
+                        onClick={() => setActiveSlideIndex(idx)}
+                        className={`relative shrink-0 w-20 aspect-[16/9] rounded-md overflow-hidden border-2 transition-all group ${
+                          isActive 
+                            ? 'border-[#e60064] scale-105 shadow-lg ring-2 ring-[#e60064]/50' 
+                            : 'border-white/20 opacity-50 hover:opacity-100 hover:border-white/50'
+                        }`}
+                        title={`Slide ${idx + 1}: ${slide.title}`}
+                      >
+                        <img
+                          src={`/assets/sponsership/${slide.file}`}
+                          alt={slide.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/20" />
+                        <span className="absolute bottom-0.5 right-0.5 text-[8px] font-mono font-bold bg-black/80 px-1 rounded text-white">
+                          {idx + 1}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
-            ))}
+
+            </div>
+
           </div>
-        )}
+
+        </div>
 
       </section>
 
