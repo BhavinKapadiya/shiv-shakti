@@ -78,7 +78,11 @@ export default function NavigationMenu({ isOpen, onClose, onNavigate, onOpenBook
                       0{idx + 1}
                     </span>
                     <span className={`font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase transition-all duration-300 ${
-                      isHovered ? 'text-theatre-crimson translate-x-3' : 'text-white/90 group-hover:text-white'
+                      isHovered 
+                        ? 'text-theatre-crimson translate-x-3' 
+                        : item.isPage 
+                          ? 'text-[#e60064]' 
+                          : 'text-white/90 group-hover:text-white'
                     }`}>
                       {item.label}
                     </span>

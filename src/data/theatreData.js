@@ -353,11 +353,11 @@ export const FAQS = [
 
 export const MENU_ITEMS = [
   { label: "Shows", href: "#shows", targetId: "shows", marquee: "SHIV-SHAKTI • MUMBAI PREMIERE • DATES ANNOUNCING SOON • LIVE TICKETS" },
-  { label: "Shiv-Shakti Deck", href: "#shiv-shakti-deck", targetId: "shiv-shakti-deck", marquee: "OFFICIAL SHOW DOSSIER • 15 SLIDES • CAST SPOTLIGHT • NANDINI • RUMIT SHARMA" },
+  { label: "Shiv-Shakti Deck", href: "#shiv-shakti-deck", targetId: "shiv-shakti-deck", marquee: "OFFICIAL SHOW DOSSIER • 15 SLIDES • CAST SPOTLIGHT • NANDINI • RUMIT SHARMA", isPage: true },
   { label: "About", href: "#about", targetId: "about", marquee: "FIVE ACTORS • ONE BORROWED SPOTLIGHT • STORIES ROOTED IN OUR SOIL" },
-  { label: "Productions", href: "#productions", targetId: "productions", marquee: "SEASON ONE • SHIV-SHAKTI • ANDHA YUG • CHANDNI RAATEIN" },
+  { label: "Our Work", href: "#productions", targetId: "productions", marquee: "SEASON ONE • SHIV-SHAKTI • ANDHA YUG • CHANDNI RAATEIN" },
   { label: "Artists", href: "#artists", targetId: "artists", marquee: "PARTH • MEHER IRANI • SOURAV DAS • PRIYA NAIR • THE COMPANY" },
-  { label: "Gallery", href: "#gallery", targetId: "gallery", marquee: "FROM THE WINGS • STAGE LIGHTS • REHEARSALS • BACKSTAGE SECRETS" },
-  { label: "Sponsorship", href: "#sponsorship", targetId: "sponsorship", marquee: "PARTNERSHIPS • 100 SHOWS • 80,000+ AUDIENCE • BRAND INTEGRATIONS • PITCH DECK" },
+  { label: "Gallery", href: "#gallery", targetId: "gallery", marquee: "FROM THE WINGS • STAGE LIGHTS • REHEARSALS • BACKSTAGE SECRETS", isPage: true },
+  { label: "Sponsorship", href: "#sponsorship", targetId: "sponsorship", marquee: "PARTNERSHIPS • 100 SHOWS • 80,000+ AUDIENCE • BRAND INTEGRATIONS • PITCH DECK", isPage: true },
   { label: "Contact", href: "#contact", targetId: "contact", marquee: "INVITE US TO YOUR CITY • VENUE BOOKINGS • COLLABORATIONS" }
 ];

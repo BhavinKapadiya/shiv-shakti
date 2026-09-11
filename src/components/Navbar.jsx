@@ -36,7 +36,7 @@ export default function Navbar({ onOpenMenu, onOpenBooking, onNavigate, setCurso
         </button>
 
         {/* Center Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-[13px] font-display font-semibold uppercase tracking-wider text-[#333333]">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-6 text-[13px] font-display font-semibold uppercase tracking-wider text-[#333333]">
           <button 
             onClick={() => onNavigate('shows')}
             className="hover:text-[#e60064] transition-colors"
@@ -45,10 +45,9 @@ export default function Navbar({ onOpenMenu, onOpenBooking, onNavigate, setCurso
           </button>
           <button 
             onClick={() => onNavigate('shiv-shakti-deck')}
-            className="hover:text-[#e60064] text-[#111111] font-bold transition-colors relative flex items-center gap-1.5 group"
+            className="text-[#e60064] font-bold hover:opacity-80 transition-opacity relative"
           >
-            <span>Shiv-Shakti Deck</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e60064] animate-pulse" />
+            Shiv-Shakti Deck
           </button>
           <button 
             onClick={() => onNavigate('about')}
@@ -60,7 +59,7 @@ export default function Navbar({ onOpenMenu, onOpenBooking, onNavigate, setCurso
             onClick={() => onNavigate('productions')}
             className="hover:text-[#e60064] transition-colors"
           >
-            Productions
+            Our Work
           </button>
           <button 
             onClick={() => onNavigate('artists')}
@@ -70,13 +69,13 @@ export default function Navbar({ onOpenMenu, onOpenBooking, onNavigate, setCurso
           </button>
           <button 
             onClick={() => onNavigate('gallery')}
-            className="hover:text-[#e60064] transition-colors"
+            className="text-[#e60064] font-bold hover:opacity-80 transition-opacity relative"
           >
             Gallery
           </button>
           <button 
             onClick={() => onNavigate('sponsorship')}
-            className="hover:text-[#e60064] text-[#e60064] font-bold transition-colors relative"
+            className="text-[#e60064] font-bold hover:opacity-80 transition-opacity relative"
           >
             Sponsorship
           </button>
