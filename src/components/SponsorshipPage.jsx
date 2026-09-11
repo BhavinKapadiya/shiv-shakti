@@ -145,30 +145,27 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
             </div>
           </div>
 
-          {/* Right Column: Option A - Pitch Deck & Strategic Partnership Snapshot Card */}
-          <div className="lg:col-span-5">
-            <div className="rounded-3xl bg-[#0e0e12] text-white p-6 sm:p-7 border border-gray-800 shadow-2xl space-y-5 relative overflow-hidden">
+          {/* Right Column: Compact Pitch Deck Snapshot Card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="w-full max-w-[390px] rounded-2xl bg-[#0e0e12] text-white p-4 sm:p-5 border border-gray-800 shadow-xl space-y-3.5 relative overflow-hidden">
               
               {/* Subtle Ambient Glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#e60064]/15 rounded-full blur-3xl pointer-events-none -mr-10 -mt-10" />
+              <div className="absolute top-0 right-0 w-36 h-36 bg-[#e60064]/15 rounded-full blur-2xl pointer-events-none -mr-8 -mt-8" />
 
               {/* Card Top Header */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#e60064]" />
-                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-white">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-white">
                     Official Pitch Deck
                   </span>
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/80 text-[10px] font-mono uppercase">
-                  15 Slides • PDF 24 MB
-                </span>
               </div>
 
               {/* Deck Slide Thumbnail Preview */}
               <div 
                 onClick={() => setLightboxIndex(0)}
-                className="relative rounded-xl overflow-hidden aspect-[16/9] bg-black border border-white/15 cursor-pointer group shadow-md"
+                className="relative rounded-lg overflow-hidden aspect-[16/9] bg-black border border-white/15 cursor-pointer group shadow-sm"
                 title="Click to preview pitch deck"
               >
                 <img
@@ -178,40 +175,40 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:opacity-80 transition-opacity" />
                 
-                <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-[10px] font-mono text-white/90 border border-white/15">
+                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 backdrop-blur-md text-[9px] font-mono text-white/90 border border-white/15">
                   Deck Cover • Shiv-Shakti
                 </div>
 
-                <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#e60064] text-white text-[10px] font-mono font-bold uppercase shadow-sm group-hover:scale-105 transition-transform">
-                  <Maximize2 className="w-3 h-3" />
+                <div className="absolute bottom-2 right-2 flex items-center gap-1.5 px-2 py-1 rounded bg-[#e60064] text-white text-[9px] font-mono font-bold uppercase shadow-sm group-hover:scale-105 transition-transform">
+                  <Maximize2 className="w-2.5 h-2.5" />
                   <span>Preview Slide</span>
                 </div>
               </div>
 
               {/* Key Deliverables Bullet Checklist */}
-              <div className="space-y-2 text-xs font-mono text-gray-300">
+              <div className="space-y-1.5 text-[11px] font-mono text-gray-300">
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
-                  <span>Title & Powered-By Marquee Co-Branding</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064] flex-shrink-0" />
+                  <span className="truncate">Title & Powered-By Marquee Co-Branding</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
-                  <span>80,000+ Affluent Metro Live Footfall</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064] flex-shrink-0" />
+                  <span className="truncate">80,000+ Affluent Metro Live Footfall</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
-                  <span>Foyer Product Lounges & Red Carpet Backdrop</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064] flex-shrink-0" />
+                  <span className="truncate">Foyer Product Lounges & Red Carpet</span>
                 </div>
               </div>
 
               {/* Action Buttons Row */}
-              <div className="space-y-2.5 pt-2 border-t border-white/10">
+              <div className="space-y-2 pt-2 border-t border-white/10">
                 <a
                   href="/assets/sponsership/shiv-shakti-pitch-deck.pdf"
                   download="Shiv-Shakti-Sponsorship-Pitch-Deck.pdf"
-                  className="w-full px-5 py-3.5 rounded-xl bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-[#e60064]/30 group"
+                  className="w-full px-4 py-2.5 rounded-lg bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 shadow-md shadow-[#e60064]/25 group"
                 >
-                  <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                  <Download className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
                   <span>Download Full Pitch Deck (PDF)</span>
                 </a>
 
@@ -220,10 +217,10 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
                     const el = document.getElementById('partnership-form');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full px-5 py-3 rounded-xl border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+                  className="w-full px-4 py-2 rounded-lg border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-display text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all"
                 >
                   <span>Submit Sponsorship Inquiry</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
 
