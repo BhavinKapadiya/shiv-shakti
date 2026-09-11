@@ -109,9 +109,9 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
 
       {/* Hero Header matching Boch & Fernsh Design Language */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 pb-16 border-b border-gray-100">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          <div className="lg:col-span-8 space-y-6">
+          <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-50 border border-pink-200">
               <span className="w-2 h-2 rounded-full bg-[#e60064] animate-ping" />
               <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#e60064]">
@@ -119,37 +119,115 @@ export default function SponsorshipPage({ onNavigateHome, setCursorText }) {
               </span>
             </div>
 
-            <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[72px] tracking-tight leading-[1.04] text-[#111111]">
+            <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[68px] tracking-tight leading-[1.04] text-[#111111]">
               empower culture. <br />
               <span className="text-[#e60064]">elevate your brand.</span>
             </h1>
 
-            <p className="text-base sm:text-xl text-[#444444] font-normal leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg text-[#444444] font-normal leading-relaxed max-w-xl">
               Partner with Areeso Theatre's inaugural magnum opus — <strong className="text-[#111111] font-semibold">Shiv-Shakti: A Divine Love Story</strong>. 
               A 100-show pan-India production reaching 80,000+ high-affinity, culturally engaged live patrons across India’s finest metropolitan auditoriums.
             </p>
+
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-500 pt-1">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                Category Exclusivity
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                Auditorium Foyer Rights
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                VIP Box Hospitality
+              </span>
+            </div>
           </div>
 
-          <div className="lg:col-span-4 flex flex-col gap-3.5">
-            <a
-              href="/assets/sponsership/shiv-shakti-pitch-deck.pdf"
-              download="Shiv-Shakti-Sponsorship-Pitch-Deck.pdf"
-              className="w-full px-6 py-4 rounded-xl bg-[#111111] hover:bg-[#e60064] text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg group"
-            >
-              <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-              <span>Download Full Pitch Deck (PDF)</span>
-            </a>
+          {/* Right Column: Option A - Pitch Deck & Strategic Partnership Snapshot Card */}
+          <div className="lg:col-span-5">
+            <div className="rounded-3xl bg-[#0e0e12] text-white p-6 sm:p-7 border border-gray-800 shadow-2xl space-y-5 relative overflow-hidden">
+              
+              {/* Subtle Ambient Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#e60064]/15 rounded-full blur-3xl pointer-events-none -mr-10 -mt-10" />
 
-            <button
-              onClick={() => {
-                const el = document.getElementById('partnership-form');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="w-full px-6 py-3.5 rounded-xl border border-gray-900 bg-white hover:bg-gray-50 text-[#111111] font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm"
-            >
-              <span>Submit Sponsorship Inquiry</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              {/* Card Top Header */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-[#e60064]" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-white">
+                    Official Pitch Deck
+                  </span>
+                </div>
+                <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/80 text-[10px] font-mono uppercase">
+                  15 Slides • PDF 24 MB
+                </span>
+              </div>
+
+              {/* Deck Slide Thumbnail Preview */}
+              <div 
+                onClick={() => setLightboxIndex(0)}
+                className="relative rounded-xl overflow-hidden aspect-[16/9] bg-black border border-white/15 cursor-pointer group shadow-md"
+                title="Click to preview pitch deck"
+              >
+                <img
+                  src="/assets/sponsership/shiv shakti ppt-images-0.jpg"
+                  alt="Shiv Shakti Pitch Deck Cover Preview"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 group-hover:opacity-80 transition-opacity" />
+                
+                <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-[10px] font-mono text-white/90 border border-white/15">
+                  Deck Cover • Shiv-Shakti
+                </div>
+
+                <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#e60064] text-white text-[10px] font-mono font-bold uppercase shadow-sm group-hover:scale-105 transition-transform">
+                  <Maximize2 className="w-3 h-3" />
+                  <span>Preview Slide</span>
+                </div>
+              </div>
+
+              {/* Key Deliverables Bullet Checklist */}
+              <div className="space-y-2 text-xs font-mono text-gray-300">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
+                  <span>Title & Powered-By Marquee Co-Branding</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
+                  <span>80,000+ Affluent Metro Live Footfall</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e60064]" />
+                  <span>Foyer Product Lounges & Red Carpet Backdrop</span>
+                </div>
+              </div>
+
+              {/* Action Buttons Row */}
+              <div className="space-y-2.5 pt-2 border-t border-white/10">
+                <a
+                  href="/assets/sponsership/shiv-shakti-pitch-deck.pdf"
+                  download="Shiv-Shakti-Sponsorship-Pitch-Deck.pdf"
+                  className="w-full px-5 py-3.5 rounded-xl bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-[#e60064]/30 group"
+                >
+                  <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Download Full Pitch Deck (PDF)</span>
+                </a>
+
+                <button
+                  onClick={() => {
+                    const el = document.getElementById('partnership-form');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full px-5 py-3 rounded-xl border border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-display text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+                >
+                  <span>Submit Sponsorship Inquiry</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+            </div>
           </div>
 
         </div>
