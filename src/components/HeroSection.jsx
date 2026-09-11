@@ -67,20 +67,57 @@ export default function HeroSection({ onOpenVideo, onOpenBooking, onNavigate, se
 
           </div>
 
-          {/* Right Column: Independent Artwork with Ambient Contrast Aura */}
+          {/* Right Column: Areeso Theatre Pop-Art Visual with Actor Cutout */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             
-            <div className="relative flex items-center justify-center select-none">
+            <div className="relative flex items-center justify-center select-none w-full max-w-[420px] aspect-square">
               
-              {/* Soft Ambient Contrast Aura (Enhances white lettering contrast without creating a box) */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-amber-500/15 rounded-full blur-3xl scale-125 -z-10 pointer-events-none" />
+              {/* Ambient Stage Light Glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#e60064]/20 via-[#ff2a85]/10 to-amber-400/15 rounded-full blur-3xl scale-110 -z-10 pointer-events-none" />
 
-              {/* Independent Artwork Image with Height Capping */}
-              <img
-                src="/assets/Final.png"
-                alt="When Shiv Met Shakti — Areeso Theatre"
-                className="w-auto max-h-[430px] sm:max-h-[470px] lg:max-h-[500px] max-w-[300px] sm:max-w-[340px] lg:max-w-[370px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.14)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none"
-              />
+              {/* Iconic Pop-Art Pink Backdrop Circle */}
+              <div className="absolute w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[350px] lg:h-[350px] rounded-full bg-gradient-to-tr from-[#d6005d] via-[#e60064] to-[#ff2a85] shadow-2xl shadow-[#e60064]/30" />
+
+              {/* Areeso Actor Cutout (Black & White Drama Portrait) */}
+              <div className="relative z-10 flex items-end justify-center h-full w-full">
+                <img
+                  src="/assets/areeso-actor-cutout.png"
+                  alt="Areeso Theatre Ensemble Actor"
+                  className="w-auto max-h-[380px] sm:max-h-[420px] lg:max-h-[460px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.45)] hover:scale-105 transition-transform duration-500 ease-out pointer-events-none translate-y-2"
+                />
+              </div>
+
+              {/* Rotating Circular Brand Seal Badge */}
+              <div className="absolute -top-2 -right-2 sm:top-2 sm:right-2 z-20 w-24 h-24 sm:w-28 sm:h-28 pointer-events-none">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Rotating SVG Circular Text */}
+                  <svg className="w-full h-full animate-[spin_22s_linear_infinite]" viewBox="0 0 100 100">
+                    <defs>
+                      <path
+                        id="circlePath"
+                        d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                      />
+                    </defs>
+                    <text className="text-[9px] font-bold tracking-[0.22em] uppercase fill-[#111111]">
+                      <textPath href="#circlePath" startOffset="0%">
+                        AREESO THEATRE • LIVE ON STAGE •
+                      </textPath>
+                    </text>
+                  </svg>
+                  {/* Center Star Badge */}
+                  <div className="absolute w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#111111] text-white flex items-center justify-center shadow-md">
+                    <span className="text-amber-400 text-sm sm:text-base font-bold">★</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Tag Pill: Season One Ensemble */}
+              <div className="absolute -bottom-2 left-4 sm:left-6 z-20 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200 shadow-xl flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[#e60064] animate-pulse" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#111111]">
+                  Mumbai • Original Plays
+                </span>
+              </div>
 
             </div>
 
