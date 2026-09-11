@@ -17,8 +17,8 @@ export default function ArtistsSection({ onSelectArtist, onOpenAllArtists, setCu
   };
 
   return (
-    <section id="artists" className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section id="artists" className="py-12 sm:py-16 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-gray-200">

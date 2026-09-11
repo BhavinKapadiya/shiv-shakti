@@ -22,8 +22,8 @@ export default function ContactSection({ onOpenBooking, onOpenInvite, setCursorT
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="contact" className="py-12 sm:py-16 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10">
         
         {/* Top Header Tag */}
         <div className="flex items-center gap-2">

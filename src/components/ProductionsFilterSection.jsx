@@ -104,7 +104,7 @@ export default function ProductionsFilterSection({ onOpenBooking, onOpenShowInfo
       );
 
   return (
-    <section id="productions" className="py-20 sm:py-28 px-6 sm:px-8 md:px-12 bg-[#08080a] text-white relative overflow-hidden">
+    <section id="productions" className="pt-12 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-8 md:px-12 bg-[#08080a] text-white relative overflow-hidden">
       
       {/* Background Ambient Aura */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#e60064]/5 rounded-full blur-[140px] pointer-events-none" />
