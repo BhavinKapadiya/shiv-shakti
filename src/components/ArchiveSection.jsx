@@ -5,7 +5,7 @@ import { THEATRE_INFO } from '../data/theatreData';
 
 export default function ArchiveSection({ setCursorText }) {
   return (
-    <section className="py-20 px-6 sm:px-8 md:px-12 bg-gray-50 border-t border-gray-200">
+    <section className="py-8 sm:py-10 px-6 sm:px-8 md:px-12 bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
         
         <div className="relative rounded-3xl border border-gray-200 bg-white p-8 sm:p-12 md:p-16 overflow-hidden shadow-sm">

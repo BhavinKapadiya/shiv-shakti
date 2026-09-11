@@ -29,7 +29,7 @@ export default function Footer({ onNavigate, onOpenInvite, onOpenBooking, setCur
   };
 
   return (
-    <footer className="bg-[#0a0a0c] text-white pt-24 pb-12 px-6 sm:px-8 md:px-12 border-t border-white/10 relative overflow-hidden">
+    <footer className="bg-[#0a0a0c] text-white pt-12 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-8 md:px-12 border-t border-white/10 relative overflow-hidden">
       
       {/* Top Main Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">

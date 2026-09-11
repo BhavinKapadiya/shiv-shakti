@@ -10,7 +10,7 @@ export default function FaqSection({ onOpenInvite, setCursorText }) {
   };
 
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
+    <section className="py-10 sm:py-14 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

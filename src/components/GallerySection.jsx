@@ -20,8 +20,8 @@ export default function GallerySection({ onSelectMoment, onOpenFullGallery, onNa
   };
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
+    <section id="gallery" className="pt-8 sm:pt-10 pb-6 sm:pb-8 px-6 sm:px-8 md:px-12 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-10">
         
         {/* Header matching Boch & Fernsh Design */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-4 border-b border-gray-200">
