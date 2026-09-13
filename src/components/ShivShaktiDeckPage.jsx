@@ -16,26 +16,198 @@ import {
   CheckCircle2, 
   Phone, 
   Mail, 
-  Calendar,
-  Layers,
-  FileText,
-  Flame,
-  Music,
-  MapPin,
-  Clock,
-  Theater,
-  Quote,
-  Shield,
-  Star
+  Calendar, 
+  Layers, 
+  FileText, 
+  Flame, 
+  Music, 
+  MapPin, 
+  Clock, 
+  Theater, 
+  Quote, 
+  Shield, 
+  Star,
+  Search,
+  Filter
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { THEATRE_INFO } from '../data/theatreData';
 import { SPONSORSHIP_SLIDES } from './SponsorshipPage';
 
+export const SHIV_SHAKTI_CAST = [
+  {
+    id: "rumit-sharma",
+    name: "Rumit Sharma",
+    character: "Prajapati Daksh & Tarakasur",
+    category: "leads",
+    categoryLabel: "Principal Lead • Dual Roles",
+    accentColor: "#e60064",
+    image: "/assets/rumit.jpeg",
+    experience: "15 Years Stage Experience",
+    almaMater: "Acting Studio Mumbai",
+    speciality: "Chekhov & Adler Techniques",
+    tags: ["15 Yrs Stage Exp", "Acting Studio Mumbai", "Chekhov & Adler Techniques"],
+    bio: "Rumit Sharma is a trained actor and dancer with fifteen years of stage experience. A graduate of Acting Studio Mumbai, he is trained in the Michael Chekhov and Stella Adler acting techniques.\n\nHis theatre credits span a diverse range — from Strindberg's Facing Death and Sophocles' King Oedipus to Vijay Tendulkar's Thief Police, Mohan Rakesh's Bahut Bahut Bada Sawaal, Dario Fo's The Virtuous Burglar and Open Couple, and Dedh Inch Oopar. Most recently he has been part of the Gujarati commercial production Dussehra.",
+    characterHighlight: "Dual Roles: Prajapati Daksh (The authoritarian patriarch whose tragic hubris sparks Sati's cosmic sacrifice) & Tarakasur (The invincible cosmic conqueror whose boon terrorizes the Devas)."
+  },
+  {
+    id: "kalyan-choudhury",
+    name: "Kalyan Choudhury",
+    character: "Narad",
+    category: "leads",
+    categoryLabel: "INLAKS Awardee • Senior Actor",
+    accentColor: "#fbbf24",
+    image: "/assets/Kalyan chaudhri.jpeg",
+    experience: "22+ Years Stage & Screen",
+    almaMater: "Prague Shakespeare Company",
+    speciality: "Kudiyattam & Commedia dell’Arte",
+    tags: ["22+ Yrs Experience", "INLAKS Theatre Award (2007)", "Prague Shakespeare Co."],
+    bio: "With over 22 years of experience in theatre, film, and voice work, Kalyan Choudhury is an accomplished actor and INLAKS Theatre Award recipient (2007). He has performed in over 50 productions across major Indian festivals and internationally in the UK and Prague.\n\nTrained in Kudiyattam under G. Venu and European Clowning and Commedia dell’Arte at the Prague Shakespeare Company, Czech Republic, his diverse body of work spans classical, physical, and contemporary forms.",
+    characterHighlight: "Brings master physical clowning nuance, Kudiyattam precision, and cosmic insight to Devrishi Narad as the divine catalyst bridging Kailash and the mortal realm."
+  },
+  {
+    id: "shivangi-tripathi",
+    name: "Shivangi Tripathi",
+    character: "Rati",
+    category: "celestials",
+    categoryLabel: "NSD Graduate • Yakshagana",
+    accentColor: "#ec4899",
+    image: "/assets/Shivangi Tripathi.jpeg",
+    experience: "10+ Years Stage Experience",
+    almaMater: "NSD Varanasi",
+    speciality: "Yakshagana & Folk Singing",
+    tags: ["NSD Varanasi Graduate", "10+ Yrs Theatre Exp", "30+ Productions", "Yakshagana"],
+    bio: "Shivangi Tripathi is a dedicated actor and NSD Varanasi graduate with over ten years of theatre experience across 30+ productions. Trained in Yakshagana and traditional folk singing, she brings a grounded physical presence, emotional authenticity, and strong vocal command to stage and screen.",
+    characterHighlight: "Infuses the character of Rati (Goddess of Love & Desire) with hypnotic traditional discipline, expressive vocal power, and profound emotional vulnerability."
+  },
+  {
+    id: "priyanshi-choudhary",
+    name: "Priyanshi Choudhary",
+    character: "Varini",
+    category: "celestials",
+    categoryLabel: "NSD & Kamani Stages",
+    accentColor: "#f472b6",
+    image: "/assets/Priyanshi chaudhri.jpeg",
+    experience: "Mumbai & Delhi Stages",
+    almaMater: "National School of Drama (NSD) Stages",
+    speciality: "Classical Dance, Acting & Vocal Power",
+    tags: ["NSD & Kamani Stages", "LTG Auditorium", "Dancer & Actor", "Stage & Camera"],
+    bio: "Priyanshi Choudhary is a versatile Mumbai-based theatre artist, actor, and dancer originally from Ghaziabad, Uttar Pradesh. She has performed extensively on prestigious stages including the National School of Drama (NSD), Kamani Auditorium, and LTG Auditorium. Trained in dance, acting, and singing, Priyanshi seamlessly navigates stage and camera, bringing emotional authenticity, vocal power, and dynamic stage presence to her work.",
+    characterHighlight: "Depicts Queen Varini (Consort to Daksh and Mother of Sati) with regal dignity, maternal devotion, and nuanced dramatic depth."
+  },
+  {
+    id: "pinkesh-prajapati",
+    name: "Pinkesh Prajapati",
+    character: "Ensemble & Movement Artist",
+    category: "movement",
+    categoryLabel: "Kalaripayattu & Garba Artist",
+    accentColor: "#38bdf8",
+    image: "/assets/Pinkesh Prajapati.jpeg",
+    experience: "9 Years Stage Experience",
+    almaMater: "Assistant to Director Manoj Shah",
+    speciality: "Kalaripayattu & Authentic Garba",
+    tags: ["9 Yrs Stage Exp", "Kalaripayattu Martial Art", "Authentic Garba", "Asst. to Manoj Shah"],
+    bio: "Mumbai-based actor and theatre professional with nine years of stage experience, Pinkesh Prajapati has been part of productions like Socrates, iSchool, Tabiyat, Lagan Magan, and Mr. Apple, Main Kaun Hoon, while also serving as assistant to director 'Manoj Shah' across multiple productions. Trained in Kalaripayattu and authentic Garba folk dance, he brings a physical, grounded presence to his work across stage and screen.",
+    characterHighlight: "Powers the high-energy physical choreography and martial discipline of the Shiv Ganas and celestial assembly sequences."
+  },
+  {
+    id: "atharva-verma",
+    name: "Atharva Verma",
+    character: "Ensemble & Multi-Instrumentalist",
+    category: "movement",
+    categoryLabel: "Live Multi-Instrumentalist",
+    accentColor: "#a855f7",
+    image: "/assets/Atharva varma.jpeg",
+    experience: "Stage, Television & Live Score",
+    almaMater: "Classical Music & Dramatic Arts",
+    speciality: "Harmonium, Keyboard, Tabla, Dholak & Guitar",
+    tags: ["Classical Singing", "Multi-Instrumentalist", "Tabla • Dholak • Guitar", "Hindi • English • Marathi"],
+    bio: "Atharva Verma is a professionally trained actor with a strong foundation in theatre, dance, classical singing, and multi-instrumental performance (Harmonium, Keyboard, Tabla, Dholak, Guitar). Fluent in Hindi, English, and Marathi, he brings versatility, discipline, and emotional depth to roles across stage, television, and screen.",
+    characterHighlight: "Synthesizes live onstage temple instrumentation with dynamic character presence across pivotal ensemble scenes."
+  },
+  {
+    id: "swapnil-kale",
+    name: "Swapnil Kale",
+    character: "Lord Brahma",
+    category: "leads",
+    categoryLabel: "Cosmic Creator Archetype",
+    accentColor: "#fbbf24",
+    image: "/assets/Sswapnil Kale.jpeg",
+    experience: "Physical & Classical Theatre",
+    almaMater: "Mumbai Dramatic Circle",
+    speciality: "Classical Staging & Vocal Gravitas",
+    tags: ["Lord Brahma", "Cosmic Archetype", "Classical Delivery"],
+    bio: "Swapnil Kale portrays Lord Brahma, the cosmic creator archetype, bringing commanding stature, classical voice resonance, and architectural stage presence to the celestial councils that govern cosmic order.",
+    characterHighlight: "Anchors the divine assembly scenes with majestic presence, balancing cosmological creation against the unfolding conflict of Daksh's court."
+  },
+  {
+    id: "prakash-sawant",
+    name: "Prakash Sawant",
+    character: "Shringi",
+    category: "sages",
+    categoryLabel: "Sage & Devout Guardian",
+    accentColor: "#34d399",
+    image: "/assets/Prakash Savant.jpeg",
+    experience: "Stage & Classical Dramaturgy",
+    almaMater: "Indian Theatre Collective",
+    speciality: "Spiritual Intensity & Dramatic Restraint",
+    tags: ["Rishi Shringi", "Devoted Sage", "Dramatic Restraint"],
+    bio: "Prakash Sawant brings profound spiritual gravitas and emotional conviction to the role of Rishi Shringi, the revered sage whose unyielding devotion to Mahadeva and moral fortitude anchor key dramatic conflicts.",
+    characterHighlight: "Delivers poignant philosophical counsel and dramatic conviction in the royal sacrificial court of Prajapati Daksh."
+  },
+  {
+    id: "pranay-hajare",
+    name: "Pranay Hajare",
+    character: "Bhairav",
+    category: "movement",
+    categoryLabel: "Primal Fury & Tandava",
+    accentColor: "#ef4444",
+    image: "/assets/Pranay hajre.jpeg",
+    experience: "Physical Movement & Combat",
+    almaMater: "Movement & Martial Arts Guild",
+    speciality: "Martial Staging & Physical Acrobatics",
+    tags: ["Bhairav", "Martial Movement", "Tandava Fury"],
+    bio: "Pranay Hajare channels the ferocious, primal power of Bhairav — the divine protector and manifestation of Lord Shiva's supreme righteous fury, uniting explosive physical combat with visceral theatrical power.",
+    characterHighlight: "Leads the earth-shattering combat and dance sequences during the destruction of Daksh's sacrificial arena."
+  },
+  {
+    id: "arun-sahu",
+    name: "Arun Sahu",
+    character: "Rishi",
+    category: "sages",
+    categoryLabel: "Vedic Priest & Scholar",
+    accentColor: "#f59e0b",
+    image: "/assets/Arun sahu.jpeg",
+    experience: "Classical Verse & Stage",
+    almaMater: "Vedic Arts & Dramatics",
+    speciality: "Vedic Chanting & Ceremonial Rites",
+    tags: ["Vedic Rishi", "Sacred Chants", "Ceremonial Delivery"],
+    bio: "Arun Sahu performs as the royal Rishi in the court of Prajapati Daksh, bringing classical diction, traditional Vedic chant cadence, and formal solemnity to the sacred sacrificial rituals.",
+    characterHighlight: "Conducts the Vedic yajna ceremonies with ritual authenticity, vocal authority, and ceremonial precision."
+  },
+  {
+    id: "kiran-holkar",
+    name: "Kiran Holkar",
+    character: "Jaya",
+    category: "celestials",
+    categoryLabel: "Celestial Attendant to Shakti",
+    accentColor: "#ec4899",
+    image: "/assets/Kiran holkar.jpeg",
+    experience: "Physical Theatre & Classical Grace",
+    almaMater: "Contemporary Performing Arts",
+    speciality: "Lyrical Movement & Emotional Resonance",
+    tags: ["Jaya", "Celestial Realm", "Lyrical Grace"],
+    bio: "Kiran Holkar portrays Jaya, the loyal companion and celestial attendant to Goddess Sati/Shakti, bringing luminous stage presence, lyrical physical grace, and deep emotional resonance.",
+    characterHighlight: "The steadfast emotional companion witnessing, supporting, and honoring Sati's eternal journey and ultimate sacrifice."
+  }
+];
+
 export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
+  const [castFilter, setCastFilter] = useState('all');
+  const [castSearch, setCastSearch] = useState('');
 
   // Inquiry Form State
   const [formData, setFormData] = useState({
@@ -221,7 +393,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
             }}
             className={`px-4 py-2 rounded-lg transition-all shrink-0 ${activeTab === 'cast' ? 'bg-[#e60064] text-white font-bold' : 'text-gray-400 hover:text-white bg-white/5'}`}
           >
-            03. Cast Spotlight (Rumit Sharma)
+            03. Ensemble & Cast ({SHIV_SHAKTI_CAST.length} Artists)
           </button>
           <button
             onClick={() => {
@@ -373,139 +545,269 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
         </div>
       </section>
 
-      {/* SECTION 03: Featured Cast Spotlight — Rumit Sharma */}
+      {/* SECTION 03: The Ensemble & Cast Cards Grid */}
       <section id="cast-section" className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-20 border-b border-white/10">
         <div className="space-y-12">
           
-          <div className="text-center space-y-3 max-w-3xl mx-auto">
-            <span className="text-[#e60064] font-mono text-xs font-bold uppercase tracking-widest">
-              03 • Ensemble & Cast Spotlight
-            </span>
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-              Featured Actor Spotlight
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-400">
-              Introducing the powerhouse performing ensemble bringing the timeless characters of Shiv-Shakti to life on stage.
-            </p>
-          </div>
-
-          {/* Rumit Sharma Hero Feature Card */}
-          <div className="rounded-3xl bg-[#111116] border border-white/15 p-6 sm:p-10 shadow-2xl overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              
-              {/* Rumit Sharma Picture Frame */}
-              <div className="lg:col-span-5">
-                <div className="relative rounded-2xl overflow-hidden border-2 border-white/20 bg-black aspect-[3/4] shadow-2xl group">
-                  <img
-                    src="/assets/rumit.jpeg"
-                    alt="Rumit Sharma - Actor in Shiv-Shakti"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                  
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#e60064] text-white text-[10px] font-mono font-bold uppercase tracking-wider shadow-md">
-                      Featured Lead Cast
-                    </span>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                    <h3 className="font-display font-black text-2xl text-white">
-                      Rumit Sharma
-                    </h3>
-                    <p className="text-xs font-mono text-[#fbbf24] font-semibold">
-                      Playing: Prajapati Daksh & Tarakasur
-                    </p>
-                  </div>
-                </div>
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-white/10">
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e60064]/15 border border-[#e60064]/30 text-[#ff3388] text-xs font-mono font-bold uppercase tracking-wider">
+                <Users className="w-3.5 h-3.5" />
+                <span>03 • Principal Ensemble & Artists</span>
               </div>
+              <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
+                The Cast of Shiv-Shakti
+              </h2>
+              <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                Meet the 11 powerhouse physical theatre actors, classical scholars, and master performers bringing the cosmic narrative to life on stage.
+              </p>
+            </div>
 
-              {/* Rumit Sharma Bio & Credits */}
-              <div className="lg:col-span-7 space-y-6">
-                
-                <div className="space-y-2">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-0.5 rounded bg-white/10 text-white text-[11px] font-mono">15 Years Stage Experience</span>
-                    <span className="px-2.5 py-0.5 rounded bg-white/10 text-white text-[11px] font-mono">Acting Studio Mumbai Graduate</span>
-                    <span className="px-2.5 py-0.5 rounded bg-white/10 text-white text-[11px] font-mono">Chekhov & Adler Techniques</span>
-                  </div>
-                  <h3 className="font-display font-black text-3xl sm:text-4xl text-white">
-                    Rumit Sharma
-                  </h3>
-                  <p className="font-mono text-xs text-[#e60064] uppercase tracking-widest font-bold">
-                    Dual Roles: Prajapati Daksh & Tarakasur
-                  </p>
-                </div>
-
-                {/* Bio text directly provided by client */}
-                <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
-                  <p>
-                    <strong className="text-white">Rumit Sharma</strong> is a trained actor and dancer with fifteen years of stage experience. A graduate of <em>Acting Studio Mumbai</em>, he is trained in the classical <strong>Michael Chekhov</strong> and <strong>Stella Adler</strong> acting techniques.
-                  </p>
-                  <p>
-                    His theatre credits span a rich and diverse repertoire across Indian and global dramaturgy — from August Strindberg's <em>Facing Death</em> and Sophocles' immortal tragedy <em>King Oedipus</em> to Vijay Tendulkar's satirical masterpiece <em>Thief Police</em>, Mohan Rakesh's <em>Bahut Bahut Bada Sawaal</em>, Dario Fo's <em>The Virtuous Burglar</em> and <em>Open Couple</em>, and <em>Dedh Inch Oopar</em>. Most recently, he has been part of the acclaimed Gujarati commercial stage production <em>Dussehra</em>.
-                  </p>
-                </div>
-
-                {/* Character Breakdown in Shiv-Shakti */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1.5">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#fbbf24] font-bold uppercase">
-                      <Shield className="w-3.5 h-3.5" />
-                      <span>Role 01: Prajapati Daksh</span>
-                    </div>
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      The authoritarian sovereign whose orthodox pride and tragic hubris spark Sati's cosmic self-sacrifice and Veerabhadra's retribution.
-                    </p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-black/60 border border-white/10 space-y-1.5">
-                    <div className="flex items-center gap-2 text-xs font-mono text-[#e60064] font-bold uppercase">
-                      <Flame className="w-3.5 h-3.5" />
-                      <span>Role 02: Tarakasur</span>
-                    </div>
-                    <p className="text-xs text-gray-400 leading-relaxed">
-                      The invincible cosmic conqueror whose boon terrorizes the Devas and demands the union of Shiva and Shakti for his defeat.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-
+            {/* Quick Stats Pill */}
+            <div className="flex items-center gap-3">
+              <span className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white font-mono text-xs flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-[#fbbf24]" />
+                <span>11 Featured Cast Profiles</span>
+              </span>
             </div>
           </div>
 
-          {/* Supporting Ensemble Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-display font-bold">
-                SH
+          {/* Filter & Search Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            
+            {/* Filter Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs font-mono">
+              <button
+                onClick={() => setCastFilter('all')}
+                className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
+                  castFilter === 'all'
+                    ? 'bg-[#e60064] text-white font-bold shadow-md shadow-[#e60064]/25'
+                    : 'bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5'
+                }`}
+              >
+                All Artists ({SHIV_SHAKTI_CAST.length})
+              </button>
+
+              <button
+                onClick={() => setCastFilter('leads')}
+                className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
+                  castFilter === 'leads'
+                    ? 'bg-[#e60064] text-white font-bold shadow-md shadow-[#e60064]/25'
+                    : 'bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5'
+                }`}
+              >
+                Leads & Deities ({SHIV_SHAKTI_CAST.filter(c => c.category === 'leads').length})
+              </button>
+
+              <button
+                onClick={() => setCastFilter('celestials')}
+                className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
+                  castFilter === 'celestials'
+                    ? 'bg-[#e60064] text-white font-bold shadow-md shadow-[#e60064]/25'
+                    : 'bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5'
+                }`}
+              >
+                Celestials & Queens ({SHIV_SHAKTI_CAST.filter(c => c.category === 'celestials').length})
+              </button>
+
+              <button
+                onClick={() => setCastFilter('sages')}
+                className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
+                  castFilter === 'sages'
+                    ? 'bg-[#e60064] text-white font-bold shadow-md shadow-[#e60064]/25'
+                    : 'bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5'
+                }`}
+              >
+                Sages & Scholars ({SHIV_SHAKTI_CAST.filter(c => c.category === 'sages').length})
+              </button>
+
+              <button
+                onClick={() => setCastFilter('movement')}
+                className={`px-3.5 py-2 rounded-xl transition-all whitespace-nowrap ${
+                  castFilter === 'movement'
+                    ? 'bg-[#e60064] text-white font-bold shadow-md shadow-[#e60064]/25'
+                    : 'bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/5'
+                }`}
+              >
+                Movement & Music ({SHIV_SHAKTI_CAST.filter(c => c.category === 'movement').length})
+              </button>
+            </div>
+
+            {/* Search Input */}
+            <div className="relative min-w-[240px]">
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                value={castSearch}
+                onChange={(e) => setCastSearch(e.target.value)}
+                placeholder="Search actor or character..."
+                className="w-full pl-9 pr-8 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-white placeholder-gray-500 focus:outline-none focus:border-[#e60064] focus:bg-white/10 transition-all"
+              />
+              {castSearch && (
+                <button
+                  onClick={() => setCastSearch('')}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-xs p-1"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+          </div>
+
+          {/* Cast Cards Grid */}
+          {(() => {
+            const filtered = SHIV_SHAKTI_CAST.filter(actor => {
+              const matchesCategory = castFilter === 'all' || actor.category === castFilter;
+              const matchesSearch = !castSearch || 
+                actor.name.toLowerCase().includes(castSearch.toLowerCase()) ||
+                actor.character.toLowerCase().includes(castSearch.toLowerCase()) ||
+                actor.bio.toLowerCase().includes(castSearch.toLowerCase()) ||
+                actor.tags.some(t => t.toLowerCase().includes(castSearch.toLowerCase()));
+              return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+              return (
+                <div className="p-12 text-center rounded-3xl bg-white/[0.02] border border-white/10 space-y-4">
+                  <Theater className="w-10 h-10 text-gray-500 mx-auto" />
+                  <h3 className="font-display font-bold text-lg text-white">No cast members match your filter</h3>
+                  <p className="text-xs font-mono text-gray-400">Try resetting your search query or choosing another category.</p>
+                  <button
+                    onClick={() => { setCastFilter('all'); setCastSearch(''); }}
+                    className="px-4 py-2 rounded-xl bg-[#e60064] text-white text-xs font-mono font-bold"
+                  >
+                    Reset Filters
+                  </button>
+                </div>
+              );
+            }
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filtered.map((actor) => (
+                  <div
+                    key={actor.id}
+                    className="group rounded-3xl bg-[#111116] border border-white/10 hover:border-[#e60064]/50 transition-all duration-500 overflow-hidden flex flex-col justify-between shadow-2xl hover:shadow-[#e60064]/20 hover:-translate-y-1.5"
+                  >
+                    {/* Top Image Frame */}
+                    <div className="relative aspect-[4/5] bg-black overflow-hidden">
+                      <img
+                        src={actor.image}
+                        alt={`${actor.name} - ${actor.character}`}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/assets/shiv-shakti-center-panel.png';
+                        }}
+                      />
+                      
+                      {/* Gradient Shade for Readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#111116] via-[#111116]/30 to-transparent" />
+
+                      {/* Top Left: Category Badge */}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
+                          <span 
+                            className="w-1.5 h-1.5 rounded-full" 
+                            style={{ backgroundColor: actor.accentColor || '#e60064' }} 
+                          />
+                          {actor.categoryLabel}
+                        </span>
+                      </div>
+
+                      {/* Bottom Character Name Overlay */}
+                      <div className="absolute bottom-4 left-4 right-4 z-10">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-black/85 backdrop-blur-md border border-white/20 text-[#fbbf24] text-xs font-mono font-bold uppercase tracking-wider shadow-md">
+                          <Theater className="w-3.5 h-3.5 text-[#e60064]" />
+                          <span>Playing: {actor.character}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card Content Block */}
+                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                      
+                      <div className="space-y-3">
+                        {/* Name & Title */}
+                        <div>
+                          <h3 className="font-display font-black text-2xl sm:text-3xl text-white group-hover:text-[#ff3388] transition-colors leading-tight">
+                            {actor.name}
+                          </h3>
+                          <p className="text-xs font-mono font-bold text-[#e60064] uppercase tracking-wider pt-1">
+                            {actor.character}
+                          </p>
+                        </div>
+
+                        {/* Tag Pills */}
+                        <div className="flex flex-wrap gap-1.5 pt-1">
+                          {actor.tags.map((tag, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="px-2.5 py-0.5 rounded-md bg-white/5 border border-white/10 text-gray-300 text-[11px] font-mono"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Bio Paragraphs */}
+                        <div className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal pt-2 space-y-2">
+                          {actor.bio.split('\n\n').map((paragraph, pIdx) => (
+                            <p key={pIdx}>{paragraph}</p>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Highlight Box */}
+                      {actor.characterHighlight && (
+                        <div className="pt-2 border-t border-white/10">
+                          <div className="p-3.5 rounded-xl bg-black/60 border border-white/5 space-y-1">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#fbbf24] flex items-center gap-1.5">
+                              <Star className="w-3 h-3 text-[#fbbf24]" />
+                              Character Focus
+                            </span>
+                            <p className="text-xs text-gray-400 leading-relaxed">
+                              {actor.characterHighlight}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                    </div>
+
+                  </div>
+                ))}
               </div>
-              <h4 className="font-display font-bold text-lg text-white">Lord Shiva (The Mahadeva)</h4>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                Staged through dynamic Tandava physical choreography, yogic stillness, and deep vocal chants.
+            );
+          })()}
+
+          {/* Full Ensemble Summary Banner */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#171720] via-[#111116] to-[#171720] border border-white/15 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-1.5 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-[#e60064] font-bold uppercase tracking-wider">
+                <Award className="w-4 h-4" />
+                <span>Season One Production Ensemble</span>
+              </div>
+              <h4 className="font-display font-black text-xl sm:text-2xl text-white">
+                12 Principal Actors • 4 Master Live Percussionists • 22 Touring Party
+              </h4>
+              <p className="text-xs text-gray-400">
+                Crafted under the rigorous scenographic direction of Nandini and produced by Areeso Theatre, Mumbai.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center font-display font-bold">
-                SK
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">Shakti / Sati / Parvati</h4>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                The manifestation of cosmic energy, fierce grace, devotion, and supreme resilience.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-display font-bold">
-                GN
-              </div>
-              <h4 className="font-display font-bold text-lg text-white">The Shiv Ganas & Percussion Chorus</h4>
-              <p className="text-xs text-gray-400 leading-relaxed">
-                A choral ensemble of physical actors and live master percussionists powering every scene.
-              </p>
-            </div>
+            <button
+              onClick={() => {
+                const el = document.getElementById('booking-inquiry');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-6 py-3 rounded-xl bg-[#e60064] hover:bg-[#ff007a] text-white font-display text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shrink-0 shadow-lg shadow-[#e60064]/25"
+            >
+              <span>Book Full Ensemble</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
 
         </div>
