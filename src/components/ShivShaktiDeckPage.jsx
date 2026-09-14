@@ -36,25 +36,85 @@ import { SPONSORSHIP_SLIDES } from './SponsorshipPage';
 
 export const SHIV_SHAKTI_CAST = [
   {
+    id: "sandip-soparrkar",
+    name: "Dr. Sandip Soparrkar",
+    character: "Lord Shiva (The Mahadeva)",
+    category: "leads",
+    categoryLabel: "Lead Actor • Lord Shiva",
+    accentColor: "#38bdf8",
+    image: "/assets/Dr. Sandip Soparrkar.jpeg",
+    experience: "Internationally Acclaimed Dancer & Choreographer",
+    almaMater: "Pioneer of Ballroom Culture in India",
+    speciality: "Tandava Choreography, Classical & Latin Staging",
+    tags: ["Lead Actor - Shiv", "Bollywood Choreographer", "Latin & Ballroom Pioneer", "Trained Global Icons"],
+    bio: "Dr. Sandip Soparrkar is an internationally acclaimed Latin and ballroom dancer, Bollywood choreographer, and the pioneer of formal ballroom culture in India. Renowned for training global icons like Madonna and Britney Spears, his iconic work includes choreographing the acclaimed film Zubeidaa.\n\nHe currently plays the lead role of Lord Shiva in the grand, Broadway-style mythological dance drama, Shiv-Shakti, commanding the stage with extraordinary physical poise, dynamic Tandava movements, and divine authority.",
+    characterHighlight: "Leading the production as Lord Shiva, channeling the cosmic stillness of the yogi and the thunderous, transformative fury of the Tandava dance."
+  },
+  {
+    id: "vaidika-senjaliya",
+    name: "Vaidika Senjaliya",
+    character: "Shakti / Sati / Parvati",
+    category: "leads",
+    categoryLabel: "Lead Actress • Shakti / Sati / Parvati",
+    accentColor: "#e60064",
+    image: "/assets/Vaidika Senjaliya.jpeg",
+    experience: "Acclaimed Lead Actress Across Stage & Screen",
+    almaMater: "Classical Dramatic Arts & Performance",
+    speciality: "Emotional Range, Classical Expressiveness & Physical Devotion",
+    tags: ["Lead Actress - Shakti", "Sati & Parvati", "Stage & Screen", "Emotional & Classical Depth"],
+    bio: "Vaidika Senjaliya is an accomplished, versatile leading actress and performing artist acclaimed for her commanding screen presence, deep emotional range, and classical stagecraft.\n\nIn Shiv-Shakti, she takes center stage as Shakti, embodying the divine manifestations of both Sati and Parvati with breathtaking grace, fiery spiritual intensity, and transcendent devotion that redefines cosmic destiny.",
+    characterHighlight: "Embodying the dual incarnations of Shakti — from Sati's fearless defiance of orthodox vanity to Parvati's profound penance that reawakens the Mahadeva."
+  },
+  {
+    id: "gyanesh-upadhyay",
+    name: "Gyanesh Upadhyay",
+    character: "Lord Vishnu",
+    category: "leads",
+    categoryLabel: "Lord Vishnu • Cosmic Preserver",
+    accentColor: "#3b82f6",
+    image: "/assets/Gyanesh Upadhyay.jpeg",
+    experience: "11 Years Theatre Experience",
+    almaMater: "Anupam Kher's Actor Prepares (Scholarship Graduate)",
+    speciality: "Classical Staging, Feature Films & Screen Acting",
+    tags: ["11 Yrs Theatre Exp", "Actor Prepares Scholar", "30+ Stage Productions", "5 Feature Films"],
+    bio: "Gyanesh Upadhyay is a Delhi and Mumbai based theatre artist/actor who has been actively doing theatre for last 11 Years under the guidance of eminent theatre directors and actors like Puneet Issar ji, Nitish Bhardwaj ji, Atul Satya Kaushik ji, Sandeep Rawat, Yogesh Soman, Bhalekar sir, Kamal Kishore and is associated with 'FTS', 'D For Drama', 'Samarth Theatre Group' and Mumbai University. He has also done five feature films, more than 10 short films, more than 15 TVC/digital ads and several serials.\n\nHe was also awarded a scholarship to attend an acting diploma at Anupam Kher's Actor Prepares (Mumbai) and has performed in more than 30 stage productions. Born in Bihar and brought up in Delhi, he brings immense gravitas and classical mastery to the stage.",
+    characterHighlight: "Portraying the cosmic preserver Lord Vishnu, anchoring the divine Trinity with serene majesty, moral wisdom, and cosmic equilibrium."
+  },
+  {
+    id: "swapnil-kale",
+    name: "Swapnil Kale",
+    character: "Lord Brahma",
+    category: "leads",
+    categoryLabel: "Lord Brahma • Cosmic Creator",
+    accentColor: "#fbbf24",
+    image: "/assets/Sswapnil Kale.jpeg",
+    experience: "Physical & Classical Theatre",
+    almaMater: "Mumbai Dramatic Circle",
+    speciality: "Classical Staging & Vocal Gravitas",
+    tags: ["Lord Brahma", "Cosmic Archetype", "Classical Delivery"],
+    bio: "Swapnil Kale portrays Lord Brahma, the cosmic creator archetype, bringing commanding stature, classical voice resonance, and architectural stage presence to the celestial councils that govern cosmic order.",
+    characterHighlight: "Anchors the divine assembly scenes with majestic presence, balancing cosmological creation against the unfolding conflict of Daksh's court."
+  },
+  {
     id: "rumit-sharma",
     name: "Rumit Sharma",
     character: "Prajapati Daksh & Tarakasur",
     category: "leads",
-    categoryLabel: "Principal Lead • Dual Roles",
-    accentColor: "#e60064",
+    categoryLabel: "Principal Cast • Dual Roles",
+    accentColor: "#f97316",
     image: "/assets/rumit.jpeg",
     experience: "15 Years Stage Experience",
     almaMater: "Acting Studio Mumbai",
     speciality: "Chekhov & Adler Techniques",
     tags: ["15 Yrs Stage Exp", "Acting Studio Mumbai", "Chekhov & Adler Techniques"],
-    bio: "Rumit Sharma is a trained actor and dancer with fifteen years of stage experience. A graduate of Acting Studio Mumbai, he is trained in the Michael Chekhov and Stella Adler acting techniques.\n\nHis theatre credits span a diverse range — from Strindberg's Facing Death and Sophocles' King Oedipus to Vijay Tendulkar's Thief Police, Mohan Rakesh's Bahut Bahut Bada Sawaal, Dario Fo's The Virtuous Burglar and Open Couple, and Dedh Inch Oopar. Most recently he has been part of the Gujarati commercial production Dussehra.",
+    bio: "Rumit Sharma is a trained actor and dancer with fifteen years of stage experience. A graduate of Acting Studio Mumbai, he is trained in the classical Michael Chekhov and Stella Adler acting techniques.\n\nHis theatre credits span a diverse range — from Strindberg's Facing Death and Sophocles' King Oedipus to Vijay Tendulkar's Thief Police, Mohan Rakesh's Bahut Bahut Bada Sawaal, Dario Fo's The Virtuous Burglar and Open Couple, and Dedh Inch Oopar. Most recently he has been part of the Gujarati commercial production Dussehra.",
     characterHighlight: "Dual Roles: Prajapati Daksh (The authoritarian patriarch whose tragic hubris sparks Sati's cosmic sacrifice) & Tarakasur (The invincible cosmic conqueror whose boon terrorizes the Devas)."
   },
   {
     id: "kalyan-choudhury",
     name: "Kalyan Choudhury",
     character: "Narad",
-    category: "leads",
+    category: "sages",
     categoryLabel: "INLAKS Awardee • Senior Actor",
     accentColor: "#fbbf24",
     image: "/assets/Kalyan chaudhri.jpeg",
@@ -96,6 +156,51 @@ export const SHIV_SHAKTI_CAST = [
     characterHighlight: "Depicts Queen Varini (Consort to Daksh and Mother of Sati) with regal dignity, maternal devotion, and nuanced dramatic depth."
   },
   {
+    id: "kiran-holkar",
+    name: "Kiran Holkar",
+    character: "Jaya",
+    category: "celestials",
+    categoryLabel: "Celestial Attendant to Shakti",
+    accentColor: "#ec4899",
+    image: "/assets/Kiran holkar.jpeg",
+    experience: "Physical Theatre & Classical Grace",
+    almaMater: "Contemporary Performing Arts",
+    speciality: "Lyrical Movement & Emotional Resonance",
+    tags: ["Jaya", "Celestial Realm", "Lyrical Grace"],
+    bio: "Kiran Holkar portrays Jaya, the loyal companion and celestial attendant to Goddess Sati/Shakti, bringing luminous stage presence, lyrical physical grace, and deep emotional resonance.",
+    characterHighlight: "The steadfast emotional companion witnessing, supporting, and honoring Sati's eternal journey and ultimate sacrifice."
+  },
+  {
+    id: "prakash-sawant",
+    name: "Prakash Sawant",
+    character: "Shringi",
+    category: "sages",
+    categoryLabel: "Sage & Devout Guardian",
+    accentColor: "#34d399",
+    image: "/assets/Prakash Savant.jpeg",
+    experience: "Stage & Classical Dramaturgy",
+    almaMater: "Indian Theatre Collective",
+    speciality: "Spiritual Intensity & Dramatic Restraint",
+    tags: ["Rishi Shringi", "Devoted Sage", "Dramatic Restraint"],
+    bio: "Prakash Sawant brings profound spiritual gravitas and emotional conviction to the role of Rishi Shringi, the revered sage whose unyielding devotion to Mahadeva and moral fortitude anchor key dramatic conflicts.",
+    characterHighlight: "Delivers poignant philosophical counsel and dramatic conviction in the royal sacrificial court of Prajapati Daksh."
+  },
+  {
+    id: "arun-sahu",
+    name: "Arun Sahu",
+    character: "Rishi",
+    category: "sages",
+    categoryLabel: "Vedic Priest & Scholar",
+    accentColor: "#f59e0b",
+    image: "/assets/Arun sahu.jpeg",
+    experience: "Classical Verse & Stage",
+    almaMater: "Vedic Arts & Dramatics",
+    speciality: "Vedic Chanting & Ceremonial Rites",
+    tags: ["Vedic Rishi", "Sacred Chants", "Ceremonial Delivery"],
+    bio: "Arun Sahu performs as the royal Rishi in the court of Prajapati Daksh, bringing classical diction, traditional Vedic chant cadence, and formal solemnity to the sacred sacrificial rituals.",
+    characterHighlight: "Conducts the Vedic yajna ceremonies with ritual authenticity, vocal authority, and ceremonial precision."
+  },
+  {
     id: "pinkesh-prajapati",
     name: "Pinkesh Prajapati",
     character: "Ensemble & Movement Artist",
@@ -126,36 +231,6 @@ export const SHIV_SHAKTI_CAST = [
     characterHighlight: "Synthesizes live onstage temple instrumentation with dynamic character presence across pivotal ensemble scenes."
   },
   {
-    id: "swapnil-kale",
-    name: "Swapnil Kale",
-    character: "Lord Brahma",
-    category: "leads",
-    categoryLabel: "Cosmic Creator Archetype",
-    accentColor: "#fbbf24",
-    image: "/assets/Sswapnil Kale.jpeg",
-    experience: "Physical & Classical Theatre",
-    almaMater: "Mumbai Dramatic Circle",
-    speciality: "Classical Staging & Vocal Gravitas",
-    tags: ["Lord Brahma", "Cosmic Archetype", "Classical Delivery"],
-    bio: "Swapnil Kale portrays Lord Brahma, the cosmic creator archetype, bringing commanding stature, classical voice resonance, and architectural stage presence to the celestial councils that govern cosmic order.",
-    characterHighlight: "Anchors the divine assembly scenes with majestic presence, balancing cosmological creation against the unfolding conflict of Daksh's court."
-  },
-  {
-    id: "prakash-sawant",
-    name: "Prakash Sawant",
-    character: "Shringi",
-    category: "sages",
-    categoryLabel: "Sage & Devout Guardian",
-    accentColor: "#34d399",
-    image: "/assets/Prakash Savant.jpeg",
-    experience: "Stage & Classical Dramaturgy",
-    almaMater: "Indian Theatre Collective",
-    speciality: "Spiritual Intensity & Dramatic Restraint",
-    tags: ["Rishi Shringi", "Devoted Sage", "Dramatic Restraint"],
-    bio: "Prakash Sawant brings profound spiritual gravitas and emotional conviction to the role of Rishi Shringi, the revered sage whose unyielding devotion to Mahadeva and moral fortitude anchor key dramatic conflicts.",
-    characterHighlight: "Delivers poignant philosophical counsel and dramatic conviction in the royal sacrificial court of Prajapati Daksh."
-  },
-  {
     id: "pranay-hajare",
     name: "Pranay Hajare",
     character: "Bhairav",
@@ -169,36 +244,6 @@ export const SHIV_SHAKTI_CAST = [
     tags: ["Bhairav", "Martial Movement", "Tandava Fury"],
     bio: "Pranay Hajare channels the ferocious, primal power of Bhairav — the divine protector and manifestation of Lord Shiva's supreme righteous fury, uniting explosive physical combat with visceral theatrical power.",
     characterHighlight: "Leads the earth-shattering combat and dance sequences during the destruction of Daksh's sacrificial arena."
-  },
-  {
-    id: "arun-sahu",
-    name: "Arun Sahu",
-    character: "Rishi",
-    category: "sages",
-    categoryLabel: "Vedic Priest & Scholar",
-    accentColor: "#f59e0b",
-    image: "/assets/Arun sahu.jpeg",
-    experience: "Classical Verse & Stage",
-    almaMater: "Vedic Arts & Dramatics",
-    speciality: "Vedic Chanting & Ceremonial Rites",
-    tags: ["Vedic Rishi", "Sacred Chants", "Ceremonial Delivery"],
-    bio: "Arun Sahu performs as the royal Rishi in the court of Prajapati Daksh, bringing classical diction, traditional Vedic chant cadence, and formal solemnity to the sacred sacrificial rituals.",
-    characterHighlight: "Conducts the Vedic yajna ceremonies with ritual authenticity, vocal authority, and ceremonial precision."
-  },
-  {
-    id: "kiran-holkar",
-    name: "Kiran Holkar",
-    character: "Jaya",
-    category: "celestials",
-    categoryLabel: "Celestial Attendant to Shakti",
-    accentColor: "#ec4899",
-    image: "/assets/Kiran holkar.jpeg",
-    experience: "Physical Theatre & Classical Grace",
-    almaMater: "Contemporary Performing Arts",
-    speciality: "Lyrical Movement & Emotional Resonance",
-    tags: ["Jaya", "Celestial Realm", "Lyrical Grace"],
-    bio: "Kiran Holkar portrays Jaya, the loyal companion and celestial attendant to Goddess Sati/Shakti, bringing luminous stage presence, lyrical physical grace, and deep emotional resonance.",
-    characterHighlight: "The steadfast emotional companion witnessing, supporting, and honoring Sati's eternal journey and ultimate sacrifice."
   }
 ];
 
@@ -298,12 +343,12 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
                 A Divine Love Story
               </p>
               <p className="text-xs sm:text-sm font-mono text-[#e60064] font-bold tracking-wider pt-1">
-                Directed by Nandini • Produced by Areeso Theatre
+                Written & Directed by Nandini • Produced by Areeso Theatre
               </p>
             </div>
 
             <p className="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl">
-              An electrifying exploration of cosmic balance, primordial grief, and transcendent devotion. Staged on a monumental canvas with an ensemble of 12 physical theatre actors, original live folk and temple percussion, and visionary dramaturgy.
+              An electrifying exploration of cosmic balance, primordial grief, and transcendent devotion. Staged on a monumental canvas with an ensemble of 14 physical theatre actors, original live folk and temple percussion, and visionary dramaturgy.
             </p>
 
             {/* Quick Spec Pills */}
@@ -318,7 +363,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
               </span>
               <span className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/10 text-white flex items-center gap-1.5">
                 <Users className="w-3.5 h-3.5 text-[#38bdf8]" />
-                12 Cast + 4 Musicians
+                14 Cast + 4 Musicians
               </span>
               <span className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/10 text-white flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
@@ -504,39 +549,50 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
             </div>
           </div>
 
-          {/* Director Nandini */}
+          {/* Director & Writer Nandini */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-2">
               <span className="text-[#fbbf24] font-mono text-xs font-bold uppercase tracking-widest">
-                Directorial Leadership
+                Directorial & Literary Leadership
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
-                Nandini <span className="text-gray-400 text-2xl sm:text-3xl font-normal">(Director)</span>
+                Nandini <span className="text-gray-400 text-2xl sm:text-3xl font-normal">(Writer & Director)</span>
               </h2>
             </div>
 
-            <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/10 space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
-              <div className="flex items-center gap-3 pb-2 border-b border-white/10">
-                <div className="w-10 h-10 rounded-full bg-[#e60064] text-white flex items-center justify-center font-display font-bold text-lg">
-                  N
+            <div className="p-6 sm:p-7 rounded-2xl bg-white/[0.03] border border-white/10 space-y-5 text-sm sm:text-base text-gray-300 leading-relaxed">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 pb-4 border-b border-white/10">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-[#e60064]/50 bg-black shrink-0 shadow-xl">
+                  <img
+                    src="/assets/Nandani.jpeg"
+                    alt="Nandini - Writer & Director of Shiv-Shakti"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/shiv-shakti-center-panel.png';
+                    }}
+                  />
                 </div>
-                <div>
-                  <h4 className="font-display font-bold text-white text-base">Nandini</h4>
-                  <p className="text-xs font-mono text-gray-400">Director & Scenographer • Shiv-Shakti</p>
+                <div className="space-y-1 text-center sm:text-left">
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#e60064]/20 border border-[#e60064]/40 text-[#ff3388] text-[10px] font-mono font-bold uppercase tracking-wider">
+                    Playwright & Director
+                  </span>
+                  <h4 className="font-display font-black text-white text-xl sm:text-2xl pt-0.5">Nandini</h4>
+                  <p className="text-xs font-mono text-gray-400">Writer, Director & Scenographer • Shiv-Shakti</p>
                 </div>
               </div>
 
               <p>
-                With a signature directorial style that synthesizes ancient Natya Shastra physical discipline with modern psychological realism, Nandini leads the artistic vision of <em className="text-white">Shiv-Shakti</em>.
+                With a signature directorial style that synthesizes ancient Natya Shastra physical discipline with modern psychological realism, Nandini has conceived, written, and directed <em className="text-white">Shiv-Shakti</em>.
               </p>
               <p>
-                Her direction focuses on uninhibited physical embodiment, stripping away decorative clichés to expose the raw philosophical core of duality: creation and dissolution, divine detachment, and cosmic love.
+                Her text and scenography focus on uninhibited physical embodiment, stripping away decorative clichés to expose the raw philosophical core of duality: creation and dissolution, divine detachment, and cosmic love.
               </p>
 
               <blockquote className="border-l-2 border-[#e60064] pl-4 text-xs sm:text-sm italic text-gray-300 pt-1">
                 "Shiv-Shakti is not a distant myth to be observed behind glass. It is the living rhythm inside our veins — the quiet yogic silence inside our minds, and the fierce creative fire that keeps us alive."
                 <footer className="text-[10px] font-mono uppercase tracking-widest text-[#e60064] not-italic pt-1 font-bold">
-                  — Nandini, Director's Note
+                  — Nandini, Writer & Director's Note
                 </footer>
               </blockquote>
             </div>
@@ -560,7 +616,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
                 The Cast of Shiv-Shakti
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                Meet the 11 powerhouse physical theatre actors, classical scholars, and master performers bringing the cosmic narrative to life on stage.
+                Meet the {SHIV_SHAKTI_CAST.length} powerhouse physical theatre actors, classical scholars, and master performers bringing the cosmic narrative to life on stage.
               </p>
             </div>
 
@@ -568,7 +624,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
             <div className="flex items-center gap-3">
               <span className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white font-mono text-xs flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-[#fbbf24]" />
-                <span>11 Featured Cast Profiles</span>
+                <span>{SHIV_SHAKTI_CAST.length} Featured Cast Profiles</span>
               </span>
             </div>
           </div>
@@ -791,7 +847,7 @@ export default function ShivShaktiDeckPage({ onNavigateHome, setCursorText }) {
                 <span>Season One Production Ensemble</span>
               </div>
               <h4 className="font-display font-black text-xl sm:text-2xl text-white">
-                12 Principal Actors • 4 Master Live Percussionists • 22 Touring Party
+                14 Principal Actors • 4 Master Live Percussionists • 24 Touring Party
               </h4>
               <p className="text-xs text-gray-400">
                 Crafted under the rigorous scenographic direction of Nandini and produced by Areeso Theatre, Mumbai.
